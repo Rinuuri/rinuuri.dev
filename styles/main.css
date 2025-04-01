@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'Host Grotesk';
+    src:
+        url('../fonts/Nunito-Bold.ttf')  format('truetype') /* Safari, Android, iOS */
+}
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: -200% center;
+    }
+}
+*, html, body {
+    font-family: "Host Grotesk", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+}
+.circular-mask {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+}
+#background-renderer {
+    position: absolute; z-index: -10000;width: 100%; height: 100vh; display: block; margin: 0; padding: 0; cursor: grabbing
+}
+#profile-picture-div {
+    position: absolute; padding: 10px; padding-left: 20px; z-index: 3;
+}
+#profile-picture-img {
+    transform-origin: left top; transform: scale(0.15);
+}
+#language-div {
+    position: absolute; right: 0; top: 0; padding: 10px; padding-right: 20px; z-index: 3;
+}
+#language-renderer {
+    width: 100%; height: 100vh; display: block; margin: 0; padding: 0; cursor: grab;
+}
+#section-positioner {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 11; width: 900px; padding-top: 15px; border-radius: 10%; overflow: hidden;
+}
+#projects {
+    position: absolute; top: 450px; left: 20%; transform: translateX(-50%); z-index: 11; width: 900px; padding-top: 15px; border-radius: 10%; overflow: hidden;
+}
+#footer {
+    background: linear-gradient(to bottom left, rgb(41, 11, 41),  rgb(44, 18, 44)); 
+    margin-bottom: 0px; 
+    padding: 0px; 
+    left: 30%;
+    position: absolute; 
+    height: 50px;
+    z-index: 12; 
+    align-self: center; 
+    width: 40%; 
+    padding-top: 10px; 
+    overflow: hidden; 
+    bottom: 0; 
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px;
+}
+.description {
+    scale: 0.85; transform-origin: left;
+}
+.gradient-overlay {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.55), rgba(107, 29, 107, 0.3));
+  background: -webkit-linear-gradient(to bottom right, rgba(0, 0, 0, 0.55), rgba(107, 29, 107, 0.3) 100%);
+  background: -moz-linear-gradient(to bottom right, rgba(0, 0, 0, 0.55), rgba(107, 29, 107, 0.3) 100%);
+  position: absolute; top: 0; left: 0; width: 100%; height: 100vh;
+}
+.section {
+    background: rgb(15,15,16);
+    background: linear-gradient(to bottom right, rgba(15,15,16,1), rgb(44, 18, 44));
+    background: -webkit-linear-gradient(to bottom right, rgba(15,15,16,1), rgb(44, 18, 44));
+    background: -moz-linear-gradient(to bottom right, rgba(15,15,16,1), rgb(44, 18, 44));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f0f10",endColorstr="#152137",GradientType=1);
+    border-radius: 5vh;
+    height: 100%;
+    padding-top: 64px;
+    padding-left: 35px;
+    padding-right: 48px;
+    padding-bottom: 48px;
+    margin-bottom: 24px;
+    margin-right: 1%;
+    transition: all 0.5s ease-in-out;
+}
+.card {
+    width: 10%;
+}
+.section button {
+    color: white;
+    background-color: #e032e0;
+    border-radius: 120px;
+    height: 60px;
+    border: none;
+    width: 180px;
+    font-size: 22px;
+    transition: all 0.5s ease-in-out;
+}
+.section p {
+    color: #CED7EB;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 32px;
+    width: max-content;
+}
+.-section h1 {
+    font-weight: 900;
+    font-size: 36px;
+    color: white;
+    margin-bottom: 32px;
+    width: max-content;
+}
+button:hover {
+    animation-play-state: running;
+    scale: 105%;
+}
+button:not(:hover) {
+    scale: 100%;
+}
+button {
+    background: linear-gradient(to right, rgb(73, 0, 80), rgb(126, 0, 138), rgb(73, 0, 80));
+    background-size: 200%;
+    animation: background-pan 3s linear infinite;
+    animation-play-state: paused;
+    cursor: pointer;
+}
+.highlight {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(to right, rgb(167, 0, 167), violet, rgb(228, 95, 217), rgb(167, 0, 167));
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}

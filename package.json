@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "canvas": "^3.0.0",
+    "three": "^0.171.0"
+  },
+  "name": "3d-stuff",
+  "version": "1.0.0",
+  "description": "3D rendering sandbox",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rinuuri",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "vite": "^6.0.6"
+  }
+}

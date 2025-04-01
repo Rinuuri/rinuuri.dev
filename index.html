@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>@Rinuuri - The dev</title>
+		<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+		<link rel="stylesheet" href="styles/main.css">
+	</head>
+	<body>
+		<div id="profile-picture-div">
+			<div class="circular-mask">
+				<img src="images/profile_picture.jpg" alt="Profile picture" id="profile-picture-img">
+			</div>
+		</div>	
+		<div id="language-div">
+			<canvas id="language-renderer"></canvas>
+			<script type="module" src="/render_scripts/lang.js"></script>
+		</div>
+		<div class="gradient-overlay"><canvas id="background-renderer"></canvas></div>
+		<script type="module" src="/render_scripts/background.js"></script>
+		<div id="section-positioner">
+			<div class="section">
+				<h1 style="color: whitesmoke;"><span ts="hi">Hi, I'm </span> <span class="highlight">Rinuuri</span><span ts="hi_rest">, and I am<br>obsessed with development<br>since my childhood.</h1>
+				<p ts="main_desctiption" class="description">I’m a Java/Kotlin developer, a linux enthusiast and just a trans girl :)</p>
+				<button type="button" id="contactButton" ts="contact_me">Contact Me</button>
+			</div>
+		</div>
+		<div id="projects" style="display: grid; grid-template-columns: 50% 50%; left: 50%; width: 90%;">
+			<div class="section">
+				<h1 style="color: whitesmoke;"><span>RPM Roleplay</h1>
+				<p class="description">Currently I'm working as a plugin developer at the server called RPM Roleplay</p>
+				<button type="button" id="RPM-read-more" ts="more">Read more</button>
+			</div>
+			<div class="section">
+				<h1 style="color: whitesmoke;"><span>RPM Roleplay</h1>
+				<p class="description">Currently I'm working as a plugin developer at the server called RPM Roleplay</p>
+				<button type="button" id="RPM-read-more" ts="more">Read more</button>
+			</div>
+		</div>
+		<div id="footer">
+			<div style="position: absolute;right: 10px; bottom: 10px;">
+				<p style="text-align: right; color: rgb(170, 170, 170);">
+					<span ts="licence">Site source code licence:</span>
+					<br>LGPL-3.0 <a href="https://github.com/" target="_blank" style="color: rgb(209, 209, 209);">(Github)</a>
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
