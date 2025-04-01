@@ -137,3 +137,16 @@ button {
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
 }
+a.icon {
+    transition: all 0.2s ease-in-out;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 30px;
+}
+a.icon:hover {
+    scale: 115%;
+}
+a.icon:not(:hover) {
+    scale: 100%;
+}

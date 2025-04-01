@@ -63,13 +63,13 @@ const discardMaterial = new THREE.ShaderMaterial({
 var geometry = new THREE.BoxGeometry(1, 1, 1);
 var texture = new THREE.TextureLoader();
 var materials = [];
-const dutch = texture.load('./nederland3x3.jpg');
+const dutch = texture.load('./../images/dutch.jpg');
 dutch.magFilter = THREE.NearestFilter;
 dutch.minFilter = THREE.NearestFilter;
-const english = texture.load('./uk.png');
+const english = texture.load('./../images/english.png');
 english.magFilter = THREE.NearestFilter;
 english.minFilter = THREE.NearestFilter;
-const russian = texture.load('./russia3x3.jpg');
+const russian = texture.load('./../images/russian.jpg');
 russian.magFilter = THREE.NearestFilter;
 russian.minFilter = THREE.NearestFilter;
 materials.push(new THREE.MeshPhongMaterial({map: dutch}));
