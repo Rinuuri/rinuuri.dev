@@ -4,15 +4,15 @@
         "hi_rest":", and I am<br>obsessed with development<br>since my childhood.",
         "main_desctiption": "I'm a Java/Kotlin developer, a linux enthusiast and just a trans girl :)",
         "contact_me": "Contact me",
-        "licence": "Site source code licence:",
+        "licence": "Site source code license",
         "more": "Read more"
     },
     "nl": {
         "hi": "Hoi, ik heet",
         "hi_rest":", en ik ben<br>geobsedeerd door ontwikkeling<br>sinds m'n jeugd.",
-        "main_desctiption": "Ik ben een Java/Kotlin ontwikkelaar, linux enthousiast en net een trans meisje :)",
+        "main_desctiption": "Ik ben een Java/Kotlin ontwikkelster, linux enthousiast en net een trans meisje :)",
         "contact_me": "Contacteer me",
-        "licence":"Licentie voor sitebroncode:",
+        "licence":"Licentie voor sitebroncode",
         "more": "Lees meer"
     },
     "ru":{
@@ -20,7 +20,7 @@
         "hi_rest":", и я<br>обожаю разработку<br>с самого детства.",
         "main_desctiption": "Я Java/Kotlin разработчик, линукс энтузиаст и просто транс-девушка :)",
         "contact_me": "Связаться",
-        "licence": "Лицензия исходного кода сайта:",
+        "licence": "Лицензия исходного кода сайта",
         "more": "Больше"
     }
 }

@@ -4,7 +4,7 @@ import translations from '../translations.json' assert { type: 'json' };
 let language = "en";
 
 function determineLanguage(){
-  const userLang = navigator.language || navigator.userLanguage; 
+  const userLang = localStorage.getItem("preferredLanguage") || navigator.language || navigator.userLanguage; 
   switch (userLang) {
     case "ru": {
       language = "ru";
@@ -16,12 +16,13 @@ function determineLanguage(){
       cube.rotation.y = 4.71238898038469;
     }
   }
-  if (language != "en") setLanguage();
+  if (language != "en") setLanguage(language);
 }
 
 var elements = document.querySelectorAll('[ts]');
 
-function setLanguage() {
+function setLanguage(l) {
+    language = l;
     const arr = translations[language];
     elements.forEach(function(element) {
         var key = element.getAttribute('ts');
@@ -92,7 +93,7 @@ scene.add(ambientLight);
 let isDragging = false;
 let previousX;
 let velocity = 0;
-let friction = 0.4;
+const friction = 0.4;
 // Define the possible rotation positions
 const snapPositions = [0, Math.PI / 2, Math.PI, Math.PI * 3 / 2];
 
@@ -122,7 +123,7 @@ function endDrag() {
 function snapCube() {
   // Normalize the cube's rotation to be within the range [0, 2 * PI)
   let rotation = cube.rotation.y % (2 * Math.PI);
-  if (rotation < 0) {
+  if (rotation < -Math.PI/4) {
     rotation += 2 * Math.PI;
   } else if (rotation > 5.49778718038469) {
     rotation -= 2 * Math.PI;
@@ -147,22 +148,25 @@ function snapCube() {
     } else {
       cube.rotation.y = snapEnd;
       currentSnapPosition = snapEnd;
-      const old = language;
+      let lang;
       switch (snapEnd){
         case 1.5707963267948966:
-          language = "ru";
+          lang = "ru";
           break;
         case 0:
-          language = "en";
+          lang = "en";
           break;
         case 3.141592653589793:
-          language = "en";
+          lang = "en";
           break;
         case 4.71238898038469:
-          language = "nl";
+          lang = "nl";
           break;
       }
-      if (old != language) setLanguage(language);
+      if (lang != language) {
+        setLanguage(lang);
+        localStorage.setItem("preferredLanguage",language);
+      }
     }
   }
   requestAnimationFrame(snapRender);

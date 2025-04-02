@@ -2,6 +2,7 @@ uniform vec2 u_resolution;
 uniform float aspect;
 uniform float u_time;
 uniform vec2 u_mouse;
+uniform float u_scale;
 
 // Worley noise implementation, credits to https://github.com/Erkaman
 
@@ -63,7 +64,7 @@ void main() {
 	vec2 pixelPos = gl_FragCoord.xy / u_resolution;
 	pixelPos.x *= aspect;
 	float distanceIN = max(0.17-length(pixelPos - vec2((1.0-u_mouse.x)*aspect, 1.0-u_mouse.y)), 0.0);
-	pixelPos *= 48.0;
+	pixelPos *= 48.0/u_scale;
     pixelPos += u_time*5.0;
     float noise2 = worley(vec3(pixelPos+u_mouse*0.7, u_time+1.25), 1.0).x;
     float noise1 = worley(vec3(pixelPos*1.1+u_mouse*0.6, u_time), 1.0).x;

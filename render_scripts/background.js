@@ -19,7 +19,7 @@ async function loadShader(url) {
 // Initialize the scene
 async function init() {
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(0, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({antialias: false, canvas: document.querySelector('#background-renderer')});
     renderer.setSize(window.innerWidth, window.innerHeight);
     const composer = new EffectComposer( renderer );
@@ -30,7 +30,8 @@ async function init() {
         },
         aspect: {value: window.innerWidth/ window.innerHeight},
         u_time: {value: 0},
-        u_mouse: {value: new THREE.Vector2(0.5, 0.5)}
+        u_mouse: {value: new THREE.Vector2(0.5, 0.5)},
+        u_scale: {value: window.innerHeight/1000}     
     }
     
     // Load the fragment shader
@@ -48,7 +49,7 @@ async function init() {
     bloomPass.strength = 0.8;
     bloomPass.radius = 0.05;
     
-    // Add the bloom pass to the 
+    // Add the bloom pass to the pipeline
     composer.addPass(bloomPass);
 
     window.addEventListener('resize', function() {
@@ -57,7 +58,6 @@ async function init() {
         postprocessingshader.uniforms.u_resolution.value = new THREE.Vector2(window.innerWidth, window.innerHeight)
                                 .multiplyScalar(window.devicePixelRatio);
         postprocessingshader.uniforms.aspect.value = aspect;
-        camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
