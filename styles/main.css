@@ -41,7 +41,7 @@
     width: 100%; height: 100vh; display: block; margin: 0; padding: 0; cursor: grab;
 }
 #section-positioner {
-    position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 11; width: 900px; padding-top: 15px; overflow: hidden;
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 11; width: 920px; padding-top: 15px;
 }
 #projects {
     position: absolute; top: 450px; left: 20%; transform: translateX(-50%); z-index: 11; width: 900px; height: auto; display: grid; grid-template-columns: 50% 50%; left: 50%; width: 90%;
@@ -69,9 +69,9 @@
     scale: 0.85; transform-origin: left;
 }
 .gradient-overlay {
-  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.55), rgba(107, 29, 107, 0.3));
-  background: -webkit-linear-gradient(to bottom right, rgba(0, 0, 0, 0.55), rgba(107, 29, 107, 0.3) 100%);
-  background: -moz-linear-gradient(to bottom right, rgba(0, 0, 0, 0.55), rgba(107, 29, 107, 0.3) 100%);
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(107, 29, 107, 0.3));
+  background: -webkit-linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(107, 29, 107, 0.3) 100%);
+  background: -moz-linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(107, 29, 107, 0.3) 100%);
   position: absolute; top: 0; left: 0; width: 100%; height: 100vh;
 }
 .section {
@@ -88,12 +88,36 @@
     padding-bottom: 48px;
     margin-bottom: 24px;
     margin-right: 1%;
+    transition: all 0.15s ease-in-out;
+    transform-origin: center;
+    transform: scale(1);
+    position: relative;
+}
+.section:after {
+    width: 1px;
+    height: 25%;
+    background: linear-gradient(
+        rgba(0,0,0,0),
+        rgb(150, 73, 238),
+        rgba(0,0,0,0)
+    );
+    left: 0px;
+    position: absolute;
+    top: 60%;
+    opacity: 0%;
+    transition: all 0.15s ease-in-out;
+    content: "";
+}
+.section:hover:after {
+    top: 20%;
+    opacity: 100%;
 }
 #projects .section {
     height: 20vh;
 }
 .section:hover {
     background: linear-gradient(to bottom right, rgb(16, 16, 16), rgb(48, 18, 48));
+    transform: scale(101%);
 }
 .card {
     width: 10%;
@@ -115,11 +139,11 @@
     margin-bottom: 32px;
     width: max-content;
 }
-.-section h1 {
+.section h1 {
     font-weight: 900;
     font-size: 36px;
-    color: white;
-    margin-bottom: 32px;
+    color: whitesmoke;
+    margin-bottom: 1vh;
     width: max-content;
 }
 button:hover {
