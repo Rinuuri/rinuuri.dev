@@ -11,6 +11,17 @@
         background-position: -200% center;
     }
 }
+@keyframes bar {
+    0% {
+        background-position: 0% center;
+    }
+    33% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: -200% center;
+    }
+}
 *, html, body {
     font-family: "Host Grotesk", serif;
     font-optical-sizing: auto;
@@ -95,7 +106,7 @@
 }
 .section:after {
     width: 1px;
-    height: 25%;
+    height: 80px;
     background: linear-gradient(
         rgba(0,0,0,0),
         rgb(150, 73, 238),
@@ -132,6 +143,17 @@
     font-size: 22px;
     transition: all 0.25s ease-in-out;
 }
+.progress-bar {
+    left: 10%; width: 90%; height: 1vh;
+    background: linear-gradient(to right, rgb(128, 0, 128), rgb(212, 75, 201), rgb(128, 0, 128));
+    background-size: 200%;
+    border-radius: 1vh;
+    animation: bar 6s linear infinite;
+}
+.tech-name img {
+    width: 3.5vh;
+    height: 3.5vh;
+}
 .section p {
     color: #CED7EB;
     font-weight: 400;
@@ -139,7 +161,19 @@
     margin-bottom: 32px;
     width: max-content;
 }
-.section h1 {
+.tech-name {
+    font-size: x-large;
+    color: #d6c7e0;
+    height: 1px;
+    transition: all 0.25s ease-in-out;
+    transform: scale(1);
+    transform-origin: right;
+    cursor: default;
+}
+.tech-name:hover {
+    transform: scale(102%) translateX(-0.5vh);
+}
+h1,h2,h3,h4,h5 {
     font-weight: 900;
     font-size: 36px;
     color: whitesmoke;

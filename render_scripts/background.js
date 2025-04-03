@@ -54,7 +54,6 @@ async function init() {
 
     window.addEventListener('resize', function() {
         const aspect = window.innerWidth/window.innerHeight;
-        camera.aspect = aspect;
         postprocessingshader.uniforms.u_resolution.value = new THREE.Vector2(window.innerWidth, window.innerHeight)
                                 .multiplyScalar(window.devicePixelRatio);
         postprocessingshader.uniforms.aspect.value = aspect;
