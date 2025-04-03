@@ -2,19 +2,10 @@ import * as THREE from 'three';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'; 
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
+import {loadShader} from './common';
 
 let lastTime = performance.now();
-//let fps = 0;
 let time = 0;
-
-// Function to load the shader file
-async function loadShader(url) {
-    const response = await fetch(url);
-    if (!response.ok) {
-        throw new Error(`Failed to load shader: ${response.statusText}`);
-    }
-    return await response.text();
-}
 
 // Initialize the scene
 async function init() {

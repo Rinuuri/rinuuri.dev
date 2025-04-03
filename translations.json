@@ -6,7 +6,9 @@
         "contact_me": "Contact me",
         "licence": "Site source code license",
         "more": "Read more",
-        "tech_stack": "Programming languages"
+        "tech_stack": "Programming languages",
+        "other_tech": "Other tech",
+        "devider": "<div class=\"devider\" style=\"left: 60%;\">"
     },
     "nl": {
         "hi": "Hoi, ik heet",
@@ -14,7 +16,9 @@
         "main_desctiption": "Ik ben een Java/Kotlin ontwikkelster, linux enthousiast en net een trans meisje :)",
         "licence":"Licentie voor sitebroncode",
         "more": "Lees meer",
-        "tech_stack": "Programmeertaalen"
+        "tech_stack": "Programmeertaalen",
+        "other_tech": "Anders technische",
+        "devider": "<div class=\"devider\" style=\"left: 55%;\">"
     },
     "ru":{
         "hi": "Привет, я",
@@ -23,6 +27,8 @@
         "contact_me": "Связаться",
         "licence": "Лицензия исходного кода сайта",
         "more": "Больше",
-        "tech_stack": "Языки программирования"
+        "tech_stack": "Языки программирования",
+        "other_tech": "Остальной стэк",
+        "devider": "<div class=\"devider\" style=\"left: 61%;\">"
     }
 }

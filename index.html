@@ -8,17 +8,27 @@
 	</head>
 	<body>
 		<div id="projects">
-			<div class="section">
-				<h1 ts="tech_stack">Programming languages</h1>
-				<div style="position: relative; left: 0; width: 40%; height: 80%;">
-					<div style="display: flex; flex-direction: column; row-gap: 5.5vh;">
-						<span class="tech-name"><span><img src="/images/java.svg">Java</span><div class="progress-bar" style="width: 100%;"></div></span>
-						<span class="tech-name"><span><img src="/images/python.svg"> Python</span><div class="progress-bar" style="width: 80%; animation-delay: 2s;"></div></span>
-						<span class="tech-name"><span><img src="/images/kotlin.svg" style="transform: scale(0.8);"> Kotlin</span><div class="progress-bar" style="width: 35%; animation-delay: 4s;"></div></span>
+			<div class="section section-card">
+				<div ts="devider"><div class="devider" style="left: 60%;"></div></div>
+				<div style="display: grid; grid-template-columns: 50% 50%;"> 
+					<div>
+						<h1 ts="tech_stack">Programming languages</h1>
+						<div style="position: relative; left: 0; width: 100%; height: 80%;">
+							<div style="display: flex; flex-direction: column; row-gap: 5.5vh;">
+								<span class="tech-name"><span><img src="/images/java.svg">Java</span><div class="progress-bar" style="width: 100%;"></div></span>
+								<span class="tech-name"><span><img src="/images/python.svg"> Python</span><div class="progress-bar" style="width: 80%; animation-delay: 2s;"></div></span>
+								<span class="tech-name"><span><img src="/images/kotlin.svg" style="transform: scale(0.8);"> Kotlin</span><div class="progress-bar" style="width: 35%; animation-delay: 4s;"></div></span>
+							</div>
+						</div>
+					</div>
+					<div style="position: relative;left: 15%; display: flex; align-items: center; flex-direction: column;">
+						<h1 ts="other_tech">Other tech</h1>
+						<canvas id="other_tech_cube"></canvas>
+						<script type="module" src="/render_scripts/other_tech_cube.js"></script>
 					</div>
 				</div>
 			</div>
-			<div class="section">
+			<div class="section section-card">
 				<h1>RPM Roleplay</h1>
 				<p class="description">Currently I'm working as a plugin developer at the server called RPM Roleplay</p>
 				<button type="button" id="RPM-read-more" ts="more">Read more</button>

@@ -85,6 +85,10 @@
   background: -moz-linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(107, 29, 107, 0.3) 100%);
   position: absolute; top: 0; left: 0; width: 100%; height: 100vh;
 }
+.devider {
+    position: absolute; left: 60%; top: 0; height: 100%; width: 0.4vh; background-color: rgba(209, 209, 209, 0.1);
+    border-radius: 20%;
+}
 .section {
     background: rgb(15, 15, 15);
     background: linear-gradient(to bottom right, rgba(15,15,16,1), rgb(44, 18, 44));
@@ -103,6 +107,14 @@
     transform-origin: center;
     transform: scale(1);
     position: relative;
+}
+#other_tech_cube {
+    height: 20vh;
+    width: 20vh;
+    background-color: transparent;
+}
+.section-card {
+    padding-top: 5%; padding-bottom: 10%;
 }
 .section:after {
     width: 1px;
