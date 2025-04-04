@@ -36,9 +36,9 @@ async function init() {
 
     composer.addPass( new ShaderPass(postprocessingshader));
     const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight).multiplyScalar(window.devicePixelRatio), 1.5, 0.4, 0.85);
-    bloomPass.threshold = 0.3;
-    bloomPass.strength = 0.8;
-    bloomPass.radius = 0.05;
+    bloomPass.threshold = 0.1;
+    bloomPass.strength = 1.6;
+    bloomPass.radius = 0.01;
     
     // Add the bloom pass to the pipeline
     composer.addPass(bloomPass);
@@ -46,7 +46,7 @@ async function init() {
     window.addEventListener('resize', function() {
         const aspect = window.innerWidth/window.innerHeight;
         postprocessingshader.uniforms.u_resolution.value = new THREE.Vector2(window.innerWidth, window.innerHeight)
-                                .multiplyScalar(window.devicePixelRatio);
+                                .multiplyScalar(window.devicePixelRatio);                    
         postprocessingshader.uniforms.aspect.value = aspect;
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
