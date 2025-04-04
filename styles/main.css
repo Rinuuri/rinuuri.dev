@@ -281,14 +281,14 @@ a.icon:not(:hover) {
     width: 110px;
     height: 110px;
     border: 1px solid rgb(248, 189, 255);
-    background: rgba(255, 158, 250, 0.2);
+    background: rgba(255, 158, 250, 0.25);
     text-align: center;
     display: flex;
     -webkit-box-pack: center;
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;
-    box-shadow: rgb(248, 189, 255) 0px 0px 15px 0px;
+    box-shadow: rgb(248, 189, 255) 0px 0px 10px 0px;
 }
 .cubespinner img {
     width: 80%;
