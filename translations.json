@@ -2,33 +2,37 @@
     "en": {
         "hi": "Hi, I'm",
         "hi_rest":", and I am<br>obsessed with development<br>since my childhood.",
-        "main_desctiption": "I'm a Java/Kotlin developer, a linux enthusiast and just a trans girl :)",
+        "main_desctiption": "I'm a Java/Kotlin developer and just a trans girl :)",
         "contact_me": "Contact me",
         "licence": "Site source code license",
-        "more": "Read more",
         "tech_stack": "Programming languages",
         "other_tech": "Other tech",
-        "devider": "<div class=\"devider\" style=\"left: 60%;\">"
+        "devider": "<div class=\"devider\" style=\"left: 60%;\">",
+        "expectations":"A <span class=\"highlight\">Dutch</span> employer for a full-time work that will let me expand my portfolio and work experiance, learn new tech and the one who is willing to relocate me",
+        "who_do_i_search_for": "Who do I search for?"
     },
     "nl": {
         "hi": "Hoi, ik heet",
         "hi_rest":", en ik ben<br>geobsedeerd door ontwikkeling<br>sinds m'n jeugd.",
-        "main_desctiption": "Ik ben een Java/Kotlin ontwikkelster, linux enthousiast en net een trans meisje :)",
+        "main_desctiption": "Ik ben een Java/Kotlin ontwikkelster en net een trans meisje :)",
         "licence":"Licentie voor sitebroncode",
-        "more": "Lees meer",
         "tech_stack": "Programmeertaalen",
         "other_tech": "Anders technische",
-        "devider": "<div class=\"devider\" style=\"left: 55%;\">"
+        "devider": "<div class=\"devider\" style=\"left: 55%;\">",
+        "expectations":"Een <span class=\"highlight\"> Nederlandse </span> werkgever voor een fulltime baan waarmee ik m'n portfolio en werkervaring kan uitbreiden, nieuwe technologieën leren en die bereid is mee te verplaatsen",
+        "who_do_i_search_for": "Hoe zoek ik?"
+        
     },
     "ru":{
         "hi": "Привет, я",
         "hi_rest":", и я<br>обожаю разработку<br>с самого детства.",
-        "main_desctiption": "Я Java/Kotlin разработчик, линукс энтузиаст и просто транс-девушка :)",
+        "main_desctiption": "Я Java/Kotlin разработчик, да и просто транс-девушка :)",
         "contact_me": "Связаться",
         "licence": "Лицензия исходного кода сайта",
-        "more": "Больше",
         "tech_stack": "Языки программирования",
         "other_tech": "Остальной стэк",
-        "devider": "<div class=\"devider\" style=\"left: 61%;\">"
+        "devider": "<div class=\"devider\" style=\"left: 61%;\">",
+        "expectations":"<span class=\"highlight\">Нидерландского</span> работодателя для работы на полный рабочий день, который позволит мне расширить свое портфолио и опыт, а также изучать новые технологии, и тот, который готов релацировать меня",
+        "who_do_i_search_for": "Кого я ищу?"
     }
 }
