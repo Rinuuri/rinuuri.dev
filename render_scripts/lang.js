@@ -1,5 +1,8 @@
 import * as THREE from 'three';
 import translations from '../translations.json' assert { type: 'json' };
+import engPath from '../images/english.png'
+import nldPath from '../images/dutch.jpg'
+import rusPath from '../images/russian.jpg'
 
 let language = "en";
 
@@ -64,13 +67,13 @@ const discardMaterial = new THREE.ShaderMaterial({
 var geometry = new THREE.BoxGeometry(1, 1, 1);
 var texture = new THREE.TextureLoader();
 var materials = [];
-const dutch = texture.load('./../images/dutch.jpg');
+const dutch = texture.load(nldPath);
 dutch.magFilter = THREE.NearestFilter;
 dutch.minFilter = THREE.NearestFilter;
-const english = texture.load('./../images/english.png');
+const english = texture.load(engPath);
 english.magFilter = THREE.NearestFilter;
 english.minFilter = THREE.NearestFilter;
-const russian = texture.load('./../images/russian.jpg');
+const russian = texture.load(rusPath);
 russian.magFilter = THREE.NearestFilter;
 russian.minFilter = THREE.NearestFilter;
 materials.push(new THREE.MeshPhongMaterial({map: dutch}));
