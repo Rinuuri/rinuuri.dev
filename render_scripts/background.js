@@ -54,7 +54,7 @@ async function init() {
         lastTime = currentTime;
         composer.render( scene, camera );
         time += 0.0015*deltaTime;
-        postprocessingshader.uniforms.u_time.value = Math.sin(time)*0.025;
+        postprocessingshader.uniforms.u_time.value = Math.sin(time)*0.015;
     }
 
     animate();
