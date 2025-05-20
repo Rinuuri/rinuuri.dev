@@ -15,9 +15,9 @@
 						<h1 ts="tech_stack">Programming languages</h1>
 						<div style="position: relative; left: 0; width: 100%; height: 80%;">
 							<div style="display: flex; flex-direction: column; row-gap: 5.5vh;">
-								<span class="tech-name"><span><img src="/images/java.svg">Java</span><div class="progress-bar" style="width: 100%;"></div></span>
-								<span class="tech-name"><span><img src="/images/python.svg"> Python</span><div class="progress-bar" style="width: 80%; animation-delay: 2s;"></div></span>
-								<span class="tech-name"><span><img src="/images/kotlin.svg" style="transform: scale(0.8);"> Kotlin</span><div class="progress-bar" style="width: 35%; animation-delay: 4s;"></div></span>
+								<span class="tech-name"><span><img src="/images/java.svg"> Java</span><div class="progress-bar" style="width: 100%;"></div></span>
+								<span class="tech-name"><span><img src="/images/kotlin.svg" style="transform: scale(0.7) translateY(15%);"> Kotlin</span><div class="progress-bar" style="width: 60%; animation-delay: 4s;"></div></span>
+								<span class="tech-name"><span><img src="/images/python.svg" style="transform: translateY(10%);"> Python</span><div class="progress-bar" style="width: 50%; animation-delay: 2s;"></div></span>
 							</div>
 						</div>
 					</div>
@@ -64,12 +64,19 @@
 			<canvas id="language-renderer"></canvas>
 			<script type="module" src="/render_scripts/lang.js"></script>
 		</div>
-		<div class="gradient-overlay"><canvas id="background-renderer"></canvas></div>
+		<div class="gradient-overlay">
+			<div style="margin-top: 20%; margin-left: 10%; animation-delay: -2s;"><img style="animation-delay: -2s;" src="/images/papermc.png"></div>
+			<div style="margin-top: 10%; margin-left: 85%; animation-delay: -1s;"><img style="animation-delay: -1s;" src="/images/android.svg"></div>
+			<div style="margin-top: 42%; margin-left: 78%; animation-delay: -4s;"><img style="animation-delay: -4s;" src="/images/javascript.svg"></div>
+			<div style="margin-top: 10%; margin-left: 22%; animation-delay: -3s;"><img style="animation-delay: -3s;" src="/images/golang.svg"></div>
+			<div style="margin-top: 15%; margin-left: 80%; animation-delay: -3s;"><img style="animation-delay: -4s;" src="/images/jetpack-compose.png"></div>
+		</div>
+		<canvas id="background-renderer"></canvas>
 		<script type="module" src="/render_scripts/background.js"></script>
 		<div id="section-positioner">
-			<div class="section">
+			<div class="section" style="margin-top: 5%;">
 				<h1><span ts="hi">Hi, I'm </span> <span class="highlight">Rinuuri</span><span ts="hi_rest">, and I am<br>obsessed with development<br>since my childhood.</h1>
-				<p ts="main_desctiption" class="description">I’m a Java/Kotlin developer, a linux enthusiast and just a trans girl :)</p>
+				<p ts="main_desctiption" class="description">I'm a Java/Kotlin developer, a linux enthusiast and just a trans girl :)</p>
 				<button type="button" id="contactButton" ts="contact_me">Contact Me</button>
 			</div>
 		</div>
