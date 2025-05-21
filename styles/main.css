@@ -22,36 +22,15 @@
         background-position: -200% center;
     }
 }
-@keyframes spincube {
-    0%, 100% {
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-    }
-    16% {
-        transform: rotateY(-90deg);
-    }
-    33% {
-        transform: rotateY(-90deg) rotateZ(90deg);
-    }
-    50% {
-        transform: rotateY(-180deg) rotateZ(90deg);
-    }
-    66% {
-        transform: rotateY(-270deg) rotateX(90deg);
-    }
-    83% {
-        transform: rotateX(90deg);
-    }
-}
-
 @keyframes float {
     0% {
-        transform: translateY(1.5vh)
+        transform: translateY(1.1svh)
     }
     50% {
-        transform: translateY(0vh)
+        transform: translateY(0svh)
     }
     100% {
-        transform: translateY(1.5vh)
+        transform: translateY(1.1svh)
     }
 }
 
@@ -80,7 +59,7 @@ body {
 }
 #background-renderer {
     position: absolute; z-index: -10000;width: 100%; height: 100%; display: block; margin: 0; padding: 0;
-    filter: blur(2px);
+    filter: blur(0.2svh);
 }
 .circular-mask {
     border-radius: 50%;
@@ -109,7 +88,7 @@ body {
     position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 11; width: 920px; padding-top: 15px;
 }
 #projects {
-    position: absolute; top: 55%; left: 20%; transform: translateX(-50%); z-index: 11; width: 900px; height: auto; display: grid; grid-template-columns: 50% 50%; left: 50%; width: 90%;
+    position: absolute; top: 50vh; left: 20%; transform: translateX(-50%); z-index: 11; width: 900px; height: auto; display: grid; grid-template-columns: 50% 50%; left: 50%; width: 90%;
 }
 #footer {
     background: linear-gradient(to bottom left, rgb(41, 11, 41),  rgb(44, 18, 44)); 
@@ -146,6 +125,7 @@ body {
   background: -webkit-linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(107, 29, 107, 0.3) 100%);
   background: -moz-linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(107, 29, 107, 0.3) 100%);
   position: absolute; top: 0; left: 0; width: 100%; height: 100vh;
+  z-index: -1;
 }
 .devider {
     position: absolute; left: 60%; top: 0; height: 100%; width: 0.4vh; background-color: rgba(209, 209, 209, 0.1);
@@ -174,11 +154,6 @@ body {
 .long-desc {
     width: 90%;
     overflow-wrap: break-word;
-}
-#other_tech_cube {
-    height: 20vh;
-    width: 20vh;
-    background-color: transparent;
 }
 .section-card {
     padding-top: 5%; padding-bottom: 10%;
@@ -211,6 +186,7 @@ body {
 .section:hover {
     background: linear-gradient(to bottom right, rgb(16, 16, 16), rgb(48, 18, 48));
     transform: scale(101%);
+    box-shadow: #2702274f 0px 0px 4svh 0px;
 }
 .card {
     width: 10%;
@@ -227,7 +203,7 @@ body {
 }
 .progress-bar {
     left: 10%; width: 90%; height: 1vh;
-    background: linear-gradient(to right, rgb(128, 0, 128), rgb(212, 75, 201), rgb(128, 0, 128));
+    background: linear-gradient(to right, rgb(128, 0, 128), rgb(187, 75, 212), rgb(128, 0, 128));
     background-size: 200%;
     border-radius: 1vh;
     animation: bar 6s linear infinite;
@@ -263,7 +239,7 @@ h1,h2,h3,h4,h5 {
 }
 button:hover {
     animation-play-state: running;
-    scale: 103%;
+    scale: 105%;
 }
 button {
     background: linear-gradient(to right, rgb(73, 0, 80), rgb(126, 0, 138), rgb(73, 0, 80));
@@ -302,45 +278,34 @@ a.icon:hover {
 .other-tech {
     position: relative;left: 15%; display: flex; align-items: center; flex-direction: column;
 }
-.cubespinner {
-    animation-name: spincube;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-duration: 20s;
-    transform-style: preserve-3d;
-    transform-origin: 50px 50px 0px;
-    margin-left: calc(50% - 50px);
-    left: -33%;
-    position: relative;
-}
-.cubespinner div {
-    position: absolute;
-    width: 110px;
-    height: 110px;
-    border: 1px solid rgb(245, 171, 253);
-    background: rgba(255, 158, 250, 0.3);
-    text-align: center;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    box-shadow: rgb(248, 189, 255) 0px 0px 10px 0px;
-}
-.cubespinner img {
-    width: 80%;
-    height: 80%;
-}
 .gradient-overlay div {
     position: absolute;
     width: fit-content; height: fit-content; animation: float 5s ease-in-out infinite;
 }
 .gradient-overlay img {
     width: 7vh; height: 7vh; transform-origin: 50% 50%; animation: float-rotate 6s ease-in-out infinite;
-    filter: blur(4px);
+    filter: blur(0.5svh);
     transition-duration: 0.5s;
 }
 .gradient-overlay img:hover {
     filter: none;
     scale: 1.4;
+}
+.rotate-away {
+    transform-origin: 50% 0px 50vh;
+    transform: rotateY(-90deg);
+    transition: all 2s ease-in-out;
+    opacity: 0%;
+}
+.rotated {
+    transform: rotateY(90deg);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.rotate-in {
+    transform-origin: 50% 0px 50vh;
+    transform: rotateY(0deg);
+    transition: all 2s ease-in-out;
+    opacity: 100%;
 }

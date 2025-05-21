@@ -1,6 +1,7 @@
 uniform vec2 u_resolution;
 uniform float aspect;
 uniform float u_time;
+uniform float u_time_sin;
 uniform vec2 u_mouse;
 uniform float u_scale;
 
@@ -65,10 +66,10 @@ void main() {
 	pixelPos.x *= aspect;
 	float distanceIN = max(0.1-length(pixelPos - vec2((1.0-u_mouse.x)*aspect, 1.0-u_mouse.y)), 0.0);
 	pixelPos *= 10.0/u_scale;
-    pixelPos += u_time*2.0;
-    float noise2 = worley(vec3(pixelPos+u_mouse*0.15, u_time+1.25), 1.0).x;
-    float noise1 = worley(vec3(pixelPos*1.1+u_mouse*0.1, u_time), 1.0).x;
-    float strengh = step(noise1, 0.08)*0.4+step(noise2, 0.04)*0.6;
-	strengh += distanceIN*(1.0-step(strengh, 0.3))*5.0;
+    pixelPos += u_time_sin;
+    float noise2 = worley(vec3(pixelPos, u_time+1.25), 1.0).x;
+    float noise1 = worley(vec3(pixelPos*1.1, u_time), 1.0).x;
+    float strengh = step(noise1, 0.07)*0.2+step(noise2, 0.04)*0.6;
+	strengh += distanceIN*(1.0-step(strengh, 0.01))*5.0;
     gl_FragColor = vec4(strengh, strengh-0.25, strengh, 1.0);
 }
