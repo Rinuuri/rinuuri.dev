@@ -9,9 +9,11 @@ export default function Background() {
     }, []);
 
     return (
-        <>
-            <div className="gradient-overlay"></div>
-            <canvas ref={canvasRef} />
-        </>
+        <div id="background">
+            <div className="gradient-overlay">
+                <div style={{marginTop: "10%", marginLeft: "85%", animationDelay: "-1s"}}><img src={require("../images/android.svg")} /></div>
+            </div>
+            <canvas ref={canvasRef} id="background-renderer" />
+        </div>
     );
 }
