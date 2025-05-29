@@ -1,26 +1,12 @@
-<<<<<<< HEAD
-# rinuuri.dev
+## Rinuuri.dev
+Is my personal portfolio website made with react and just as any of my other hobby projects, it's completely open source under AGPL
 
-=======
-# bun-react-template
+## How to run it?
+The site is designed to run in the bun enviroment, so install bun according to the tutorial on https://bun.sh/ clone the repo and run
+` bun i ` 
+to install all dependencies and then run
+` bun dev `
+command in order to launch it in the development mode, that's it
 
-To install dependencies:
-
-```bash
-bun install
-```
-
-To start a development server:
-
-```bash
-bun dev
-```
-
-To run for production:
-
-```bash
-bun start
-```
-
-This project was created using `bun init` in bun v1.2.13. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
->>>>>>> d46ce56 (Initial commit)
+## Hosted version
+Right now the site is in development so it isn't hosted anywhere
