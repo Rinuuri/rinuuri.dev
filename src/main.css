@@ -1,0 +1,315 @@
+@font-face {
+    font-family: 'Host Grotesk';
+    src:
+        url('fonts/Nunito-Bold.ttf')  format('truetype') /* Safari, Android, iOS */
+}
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: -200% center;
+    }
+}
+@keyframes bar {
+    0% {
+        background-position: 0% center;
+    }
+    33% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: -200% center;
+    }
+}
+@keyframes float {
+    0% {
+        transform: translateY(1.1svh)
+    }
+    50% {
+        transform: translateY(0svh)
+    }
+    100% {
+        transform: translateY(1.1svh)
+    }
+}
+
+@keyframes float-rotate {
+    0% {
+        transform: rotate(5deg)
+    }
+    50% {
+        transform: rotate(-5deg)
+    }
+    100% {
+        transform: rotate(5deg)
+    }
+}
+
+*, html, body {
+    font-family: "Host Grotesk", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+}
+html, body, #root{
+    width:100%;
+    height:100%;
+}
+body {
+    background: black;
+}
+#background-renderer {
+    position: fixed; z-index: -1000; width: 100%; height: 100%; margin: 0; padding: 0;
+    filter: blur(0.2svh);
+}
+.circular-mask {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+}
+#profile-picture-div {
+    position: absolute; padding: 10px; padding-left: 20px; z-index: 3;
+}
+#profile-picture-img {
+    transform-origin: 0% 0%;
+    transform: scale(0.15) translateX(-50%) translateY(-50%);
+    transition-duration: 0.5s;
+}
+#profile-picture-img:hover {
+    rotate: 90deg;
+}
+#language-div {
+    position: absolute; padding: 10px; padding-right: 20px; z-index: 3;
+}
+#language-renderer {
+    width: 100%; height: 100vh; display: block; margin: 0; padding: 0; cursor: grab;
+}
+#section-positioner {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 11; width: 920px; padding-top: 15px;
+}
+#projects {
+    position: absolute; top: 50vh; left: 20%; transform: translateX(-50%); z-index: 11; width: 900px; height: auto; display: grid; grid-template-columns: 50% 50%; left: 50%; width: 90%;
+}
+#footer {
+    background: linear-gradient(to bottom left, rgb(41, 11, 41),  rgb(44, 18, 44)); 
+    margin-bottom: 0px; 
+    padding: 0px; 
+    left: 30%;
+    position: absolute; 
+    height: 50px;
+    z-index: 12; 
+    align-self: center; 
+    width: 40%; 
+    padding-top: 10px; 
+    overflow: hidden; 
+    bottom: 0; 
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    transform-origin: center bottom;
+    transform: scale(1);
+}
+#footer:hover {
+    background: linear-gradient(to bottom left, rgb(41, 11, 41),  rgb(48, 19, 48)); 
+    transform: scale(101%);
+}
+.description {
+    scale: 0.85; transform-origin: left;
+}
+.profile-gradient {
+    background: linear-gradient(to right, rgb(230, 160, 56), rgb(225, 74, 180), rgb(189, 37, 216), rgb(62, 163, 218));
+    width: 95px; height: 95px;
+}
+.gradient-overlay {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(107, 29, 107, 0.3));
+  background: -webkit-linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(107, 29, 107, 0.3) 100%);
+  background: -moz-linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(107, 29, 107, 0.3) 100%);
+  position: fixed; width: 100%; height: 100%;
+  z-index: 1000000;
+}
+.devider {
+    position: absolute; left: 60%; top: 0; height: 100%; width: 0.4vh; background-color: rgba(209, 209, 209, 0.1);
+    border-radius: 20%;
+}
+.section {
+    background: rgb(15, 15, 15);
+    background: linear-gradient(to bottom right, rgba(15,15,16,1), rgb(44, 18, 44));
+    background: -webkit-linear-gradient(to bottom right, rgba(15,15,16,1), rgb(44, 18, 44));
+    background: -moz-linear-gradient(to bottom right, rgba(15,15,16,1), rgb(44, 18, 44));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f0f10",endColorstr="#152137",GradientType=1);
+    border-radius: 4vh;
+    height: 100%;
+    padding-top: 64px;
+    padding-left: 35px;
+    padding-right: 48px;
+    padding-bottom: 48px;
+    margin-bottom: 24px;
+    margin-right: 1%;
+    transition: all 0.4s ease-in-out;
+    transform-origin: center;
+    transform: scale(1);
+    position: relative;
+    overflow: hidden;
+}
+.long-desc {
+    width: 90%;
+    overflow-wrap: break-word;
+}
+.section-card {
+    padding-top: 5%; padding-bottom: 10%;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-bottom: 0px;
+}
+.section:after {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(
+        rgba(0,0,0,0),
+        rgb(150, 73, 238),
+        rgba(0,0,0,0)
+    );
+    left: 0px;
+    position: absolute;
+    top: 60%;
+    opacity: 0%;
+    transition: all 0.15s ease-in-out;
+    content: "";
+}
+.section:hover:after {
+    top: 20%;
+    opacity: 100%;
+}
+#projects .section {
+    height: 20vh;
+}
+.section:hover {
+    background: linear-gradient(to bottom right, rgb(16, 16, 16), rgb(48, 18, 48));
+    transform: scale(101%);
+    box-shadow: #2702274f 0px 0px 4svh 0px;
+}
+.card {
+    width: 10%;
+}
+.section button {
+    color: white;
+    background-color: #e032e0;
+    border-radius: 120px;
+    height: 60px;
+    border: none;
+    width: 180px;
+    font-size: 22px;
+    transition: all 0.25s ease-in-out;
+}
+.progress-bar {
+    left: 10%; width: 90%; height: 1vh;
+    background: linear-gradient(to right, rgb(128, 0, 128), rgb(187, 75, 212), rgb(128, 0, 128));
+    background-size: 200%;
+    border-radius: 1vh;
+    animation: bar 6s linear infinite;
+}
+.tech-name img {
+    width: 3.5vh;
+    height: 3.5vh;
+}
+.section p {
+    color: #CED7EB;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+.tech-name {
+    font-size: x-large;
+    color: #d6c7e0;
+    height: 1px;
+    transition: all 0.25s ease-in-out;
+    transform: scale(1);
+    transform-origin: right;
+    cursor: default;
+}
+.tech-name:hover {
+    transform: scale(102%) translateX(-0.5vh);
+}
+h1,h2,h3,h4,h5 {
+    font-weight: 900;
+    font-size: 36px;
+    color: whitesmoke;
+    margin-bottom: 1vh;
+    width: max-content;
+}
+button:hover {
+    animation-play-state: running;
+    scale: 105%;
+}
+button {
+    background: linear-gradient(to right, rgb(73, 0, 80), rgb(126, 0, 138), rgb(73, 0, 80));
+    background-size: 200%;
+    animation: background-pan 3s linear infinite;
+    animation-play-state: paused;
+    cursor: pointer;
+}
+.highlight {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(to right, rgb(167, 0, 167), violet, rgb(228, 95, 217), rgb(167, 0, 167));
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}
+a.icon {
+    transition: all 0.2s ease-in-out;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 30px;
+    filter: invert(100%) brightness(40%);
+}
+a.icon:hover {
+    scale: 110%;
+    filter: invert(100%) brightness(60%);
+}
+#licence {
+    text-align: right; right: 5%; color: rgb(170, 170, 170); padding-right: 2%;
+}
+#contacts {
+    position: absolute; height: 50%; left: 3%; bottom: 10px; display: flex;
+}
+.other-tech {
+    position: relative;left: 15%; display: flex; align-items: center; flex-direction: column;
+}
+.gradient-overlay div {
+    position: absolute;
+    width: fit-content; height: fit-content; animation: float 5s ease-in-out infinite;
+}
+.gradient-overlay img {
+    width: 7vh; height: 7vh; transform-origin: 50% 50%; animation: float-rotate 6s ease-in-out infinite;
+    filter: blur(0.5svh);
+    transition-duration: 0.5s;
+}
+.gradient-overlay img:hover {
+    filter: none;
+    scale: 1.4;
+}
+.rotate-away {
+    transform-origin: 50% 0px 50vh;
+    transform: rotateY(-90deg);
+    transition: all 2s ease-in-out;
+    opacity: 0%;
+}
+.rotated {
+    transform: rotateY(90deg);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.rotate-in {
+    transform-origin: 50% 0px 50vh;
+    transform: rotateY(0deg);
+    transition: all 2s ease-in-out;
+    opacity: 100%;
+}

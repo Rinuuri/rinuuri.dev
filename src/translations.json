@@ -1,0 +1,38 @@
+{
+    "en": {
+        "hi": "Hi, I'm",
+        "hi_rest":", and I am<br>obsessed with development<br>since my childhood.",
+        "main_desctiption": "I'm a Java/Kotlin developer and just a trans girl :)",
+        "contact_me": "Contact me",
+        "licence": "Site source code license",
+        "tech_stack": "Programming languages",
+        "other_tech": "Other tech",
+        "devider": "<div class=\"devider\" style=\"left: 60%;\">",
+        "projects": "Experience and projects",
+        "projects_description": "I have experience with multithreaded environments and network programming, as I've worked on both commertial projects and my own open source ones, click the botton bellow to explore them",
+        "explore_projects": "explore"
+    },
+    "nl": {
+        "hi": "Hoi, ik heet",
+        "hi_rest":", en ik ben<br>geobsedeerd door ontwikkeling<br>sinds m'n jeugd.",
+        "main_desctiption": "Ik ben een Java/Kotlin ontwikkelster en net een trans meisje :)",
+        "licence":"Licentie voor sitebroncode",
+        "tech_stack": "Programmeertaalen",
+        "other_tech": "Anders technische",
+        "devider": "<div class=\"devider\" style=\"left: 55%;\">",
+        "projects":"Ervaring en projecten",
+        "projects_description": "Ik heb ervaring met multithreaded omgevingen en netwerkprogrammering, aangezien ik aan zowel commerciële projecten als m'n eigen open source projecten heb gewerkt, klik op de onderste knop om ze te verkennen",
+        "explore_projects": "Verkennen"
+    },
+    "ru":{
+        "hi": "Привет, я",
+        "hi_rest":", и я<br>обожаю разработку<br>с самого детства.",
+        "main_desctiption": "Я Java/Kotlin разработчик, да и просто транс-девушка :)",
+        "contact_me": "Связаться",
+        "licence": "Лицензия исходного кода сайта",
+        "tech_stack": "Языки программирования",
+        "other_tech": "Остальной стэк",
+        "devider": "<div class=\"devider\" style=\"left: 61%;\">",
+        "projects": "Опыт и проекты"
+    }
+}
