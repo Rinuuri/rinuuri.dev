@@ -3,6 +3,14 @@
     src:
         url('fonts/Nunito-Bold.ttf')  format('truetype') /* Safari, Android, iOS */
 }
+
+:root {
+  --rollout-glow: #270227;
+  font-weight: 100;
+  font-size: 18px;
+  color: rgb(203, 202, 202);
+}
+
 @keyframes background-pan {
     from {
         background-position: 0% center;
@@ -46,7 +54,7 @@
     }
 }
 
-@keyframes rollout-rolledout {
+@keyframes rollout-rollingout {
     0% {
 
     }
@@ -60,6 +68,25 @@
     }
     100% {
         z-index: 3;
+        box-shadow: var(--rollout-glow) 0px 0px 4svh 0px;
+    }
+}
+
+@keyframes rollout-rollingin {
+    0% {
+        z-index: 3;
+        box-shadow: var(--rollout-glow) 0px 0px 4svh 0px;
+    }
+    49% {
+        transform: translateY(29svh);
+        z-index: 3;
+    }
+    50% {
+        transform: translateY(29svh);
+        z-index:-1;
+    }
+    100% {
+        
     }
 }
 
@@ -92,7 +119,7 @@ body {
     position: absolute;
     top: -8svh;
     left: calc(50% - 6.5svh);
-    z-index: 4;
+    z-index: 2;
 }
 #profile-picture-img {
     transform-origin: 42.5% 42.5%;
@@ -179,15 +206,15 @@ body {
 }
 .rollout {
     background: rgb(15, 15, 15);
-    background: linear-gradient(to bottom right, rgba(15,15,16, 0.8), rgba(44, 18, 44, 0.8));
-    background: -webkit-linear-gradient(to bottom right, rgba(15,15,16, 0.8), rgb(44, 18, 44, 0.8));
-    background: -moz-linear-gradient(to bottom right, rgba(15,15,16, 0.8), rgb(44, 18, 44, 0.8));
+    background: linear-gradient(to bottom right, rgba(36, 21, 36, 0.9), rgba(52, 20, 52, 0.9));
+    background: -webkit-linear-gradient(to bottom right, rgba(15,15,16, 0.9), rgb(44, 18, 44, 0.9));
+    background: -moz-linear-gradient(to bottom right, rgba(15,15,16, 0.9), rgb(44, 18, 44, 0.9));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f0f10",endColorstr="#152137",GradientType=1);
     border-radius: 4vh;
     padding-top: 2svh;
     padding-left: 35px;
     padding-right: 48px;
-    padding-bottom: 8svh;
+    padding-bottom: 10svh;
     margin-bottom: 24px;
     margin-right: 1%;
     transition: all 0.4s ease-in-out;
@@ -196,20 +223,25 @@ body {
     position: relative;
     width: 60%;
     height: 20svh;
-    bottom: 29svh;
+    bottom: 32svh;
     filter: blur(0.2svh);
     z-index: -1;
 }
 .rollout:hover {
-    filter: blur(0.1svh);
     transform: translateY(1svh);
     cursor: pointer;
+    filter: none;
 }
 .rolling-out {
-    animation: rollout-rolledout 1s ease-in-out;
+    animation: rollout-rollingout 1s ease-in-out forwards;
+}
+.rolling-in {
+    animation: rollout-rollingin 1s ease-in-out forwards;
 }
 .rolled-out {
     z-index: 3;
+    filter: none;
+    box-shadow: var(--rollout-glow) 0px 0px 4svh 0px;
 }
 .rollout .button {
     position: absolute;

@@ -1,24 +1,30 @@
 import { useState } from "react";
+import ProgrammingLanguages from "./ProgrammingLanguages";
 
 export default function Rollout() {
-
     const [animate, setAnimate] = useState(false);
     const [rolledOut, setRolledOut] = useState(false);
+    const [rollIn, setRollIn] = useState(false);
 
     const handleAnimationEnd = () => {
-        setRolledOut(true);
+        setRolledOut(!rollIn);
+        setAnimate(false);
+        setRollIn(false);
     };
 
     const handleClick = () => {
-        setAnimate(!animate);
+        if (!rolledOut) setAnimate(true);
+        else {
+            setRolledOut(false);
+            setRollIn(true);
+        }
     };
 
     return (
-        <div style={{display: "flex", justifyContent: "center", position: "absolute", width: "100%"}}>
-            <div className={"rollout" + (animate ? " rolling-out" : "") + (rolledOut ? " rolled-out" : "")} onAnimationEnd={handleAnimationEnd} onClick={handleClick}>
-                <div className="button">
-
-                </div>
+        <div style={{display: "flex", justifyContent: "center", position: "absolute", width: "100%", height: "0px"}}>
+            <div className={"rollout" + (animate ? " rolling-out" : "") + (rolledOut ? " rolled-out" : "") + (rollIn ? " rolling-in" : "")} onAnimationEnd={handleAnimationEnd} onClick={handleClick}>
+                <ProgrammingLanguages />
+                <div className="button" />
             </div>
         </div>
     );
