@@ -46,6 +46,23 @@
     }
 }
 
+@keyframes rollout-rolledout {
+    0% {
+
+    }
+    49% {
+        transform: translateY(29svh);
+        z-index: -1;
+    }
+    50% {
+        transform: translateY(29svh);
+        z-index: 3;
+    }
+    100% {
+        z-index: 3;
+    }
+}
+
 *, html, body {
     font-family: "Host Grotesk", serif;
     font-optical-sizing: auto;
@@ -68,22 +85,27 @@ body {
 .circular-mask {
     border-radius: 50%;
     overflow: hidden;
-    width: 90px;
-    height: 90px;
+    width: 11svh;
+    height: 11svh;
 }
 #profile-picture-div {
-    position: absolute; padding: 10px; padding-left: 20px; z-index: 3;
+    position: absolute;
+    top: -8svh;
+    left: calc(50% - 6.5svh);
+    z-index: 4;
 }
 #profile-picture-img {
-    transform-origin: 0% 0%;
-    transform: scale(0.15) translateX(-50%) translateY(-50%);
+    transform-origin: 42.5% 42.5%;
+    transform: translateX(-7.5%) translateY(-7.5%);
+    width: 11svh;
+    height: 11svh;
     transition-duration: 0.5s;
 }
 #profile-picture-img:hover {
     rotate: 90deg;
 }
 #language-div {
-    position: absolute; padding: 10px; right: 20px;
+    position: absolute; padding: 10px; right: 20px; z-index: 1;
 }
 #language-renderer {
     width: 100%; height: 100vh; display: block; margin: 0; padding: 0; cursor: grab;
@@ -122,7 +144,7 @@ body {
 }
 .profile-gradient {
     background: linear-gradient(to right, rgb(230, 160, 56), rgb(225, 74, 180), rgb(189, 37, 216), rgb(62, 163, 218));
-    width: 95px; height: 95px;
+    width: 11.5svh; height: 11.5svh;
 }
 .gradient-overlay {
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(107, 29, 107, 0.3));
@@ -131,7 +153,6 @@ body {
   position: fixed;
   width: 100%; height: 100%;
   top: 0px;
-  z-index: 1000000;
 }
 .devider {
     position: absolute; left: 60%; top: 0; height: 100%; width: 0.4vh; background-color: rgba(209, 209, 209, 0.1);
@@ -145,7 +166,7 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f0f10",endColorstr="#152137",GradientType=1);
     border-radius: 4vh;
     height: 100%;
-    padding-top: 64px;
+    padding-top: 6svh;
     padding-left: 35px;
     padding-right: 48px;
     padding-bottom: 48px;
@@ -155,7 +176,49 @@ body {
     transform-origin: center;
     transform: scale(1);
     position: relative;
-    overflow: hidden;
+}
+.rollout {
+    background: rgb(15, 15, 15);
+    background: linear-gradient(to bottom right, rgba(15,15,16, 0.8), rgba(44, 18, 44, 0.8));
+    background: -webkit-linear-gradient(to bottom right, rgba(15,15,16, 0.8), rgb(44, 18, 44, 0.8));
+    background: -moz-linear-gradient(to bottom right, rgba(15,15,16, 0.8), rgb(44, 18, 44, 0.8));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f0f10",endColorstr="#152137",GradientType=1);
+    border-radius: 4vh;
+    padding-top: 2svh;
+    padding-left: 35px;
+    padding-right: 48px;
+    padding-bottom: 8svh;
+    margin-bottom: 24px;
+    margin-right: 1%;
+    transition: all 0.4s ease-in-out;
+    transform-origin: center;
+    transform: scale(1);
+    position: relative;
+    width: 60%;
+    height: 20svh;
+    bottom: 29svh;
+    filter: blur(0.2svh);
+    z-index: -1;
+}
+.rollout:hover {
+    filter: blur(0.1svh);
+    transform: translateY(1svh);
+    cursor: pointer;
+}
+.rolling-out {
+    animation: rollout-rolledout 1s ease-in-out;
+}
+.rolled-out {
+    z-index: 3;
+}
+.rollout .button {
+    position: absolute;
+    bottom: 3%;
+    width: 90%;
+    left: 5%;
+    height: 1svh;
+    background: #514f519a;
+    border-radius: 1svh;
 }
 .long-desc {
     width: 90%;
