@@ -22,7 +22,7 @@ export default function Rollout() {
 
     return (
         <div style={{display: "flex", justifyContent: "center", position: "absolute", width: "100%", height: "0px"}}>
-            <div className={"rollout" + (animate ? " rolling-out" : "") + (rolledOut ? " rolled-out" : "") + (rollIn ? " rolling-in" : "")} onAnimationEnd={handleAnimationEnd} onClick={handleClick}>
+            <div style={{userSelect: "none"}} className={"rollout" + (animate ? " rolling-out" : "") + (rolledOut ? " rolled-out" : "") + (rollIn ? " rolling-in" : "")} onAnimationEnd={handleAnimationEnd} onClick={handleClick}>
                 <ProgrammingLanguages />
                 <div className="button" />
             </div>

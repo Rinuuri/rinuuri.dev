@@ -90,6 +90,18 @@
     }
 }
 
+@keyframes loading-blob-animation {
+    0% {
+        transform: translateX(-50vh);
+    }
+    50% {
+        
+    }
+    100% {
+        transform: translateX(100vh);
+    }
+}
+
 *, html, body {
     font-family: "Host Grotesk", serif;
     font-optical-sizing: auto;
@@ -126,7 +138,9 @@ body {
     transform: translateX(-7.5%) translateY(-7.5%);
     width: 11svh;
     height: 11svh;
-    transition-duration: 0.5s;
+    transition-duration: 0.4s;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 #profile-picture-img:hover {
     rotate: 90deg;
@@ -199,16 +213,16 @@ body {
     padding-bottom: 48px;
     margin-bottom: 24px;
     margin-right: 1%;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.2s ease-in-out;
     transform-origin: center;
     transform: scale(1);
     position: relative;
 }
 .rollout {
     background: rgb(15, 15, 15);
-    background: linear-gradient(to bottom right, rgba(36, 21, 36, 0.9), rgba(52, 20, 52, 0.9));
-    background: -webkit-linear-gradient(to bottom right, rgba(15,15,16, 0.9), rgb(44, 18, 44, 0.9));
-    background: -moz-linear-gradient(to bottom right, rgba(15,15,16, 0.9), rgb(44, 18, 44, 0.9));
+    background: linear-gradient(to bottom right, rgba(36, 21, 36), rgba(52, 20, 52));
+    background: -webkit-linear-gradient(to bottom right, rgba(15,15,16), rgb(44, 18, 44));
+    background: -moz-linear-gradient(to bottom right, rgba(15,15,16), rgb(44, 18, 44));
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f0f10",endColorstr="#152137",GradientType=1);
     border-radius: 4vh;
     padding-top: 2svh;
@@ -286,7 +300,6 @@ body {
 }
 .section:hover {
     background: linear-gradient(to bottom right, rgb(16, 16, 16), rgb(48, 18, 48));
-    transform: scale(101%);
     box-shadow: #2702274f 0px 0px 4svh 0px;
 }
 .card {
@@ -388,7 +401,8 @@ a.icon:hover {
     z-index: 100000000;
     width: 7vh; height: 7vh; transform-origin: 50% 50%; animation: float-rotate 6s ease-in-out infinite;
     filter: blur(0.6svh);
-    transition-duration: 0.55s;
+    transition-duration: 0.5s;
+    -webkit-user-drag: none;
 }
 .gradient-overlay img:hover {
     filter: none;
@@ -411,4 +425,9 @@ a.icon:hover {
     transform: rotateY(0deg);
     transition: all 2s ease-in-out;
     opacity: 100%;
+}
+
+.loading-blob {
+    position: absolute;
+    animation: loading-blob-animation 2s ease-in-out infinite;
 }
