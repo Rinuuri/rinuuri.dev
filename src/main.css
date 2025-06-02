@@ -94,14 +94,23 @@
     0% {
         transform: translateX(-120%) translateY(40%);
     }
-    35% {
+    30% {
         transform: translateX(-60%) translateY(-50%);
     }
-    65% {
+    80% {
         transform: translateX(-60%) translateY(-50%);
     }
     100% {
-        transform: translateX(125%) translateY(-200%);;
+        transform: translateX(10%) translateY(-100%);
+    }
+}
+
+@keyframes loading-blob-animation-end {
+    0% {
+        transform: translateX(10%) translateY(-101%);
+    }
+    100% {
+        transform: translateX(125%) translateY(-200%);
     }
 }
 
@@ -343,6 +352,7 @@ body {
     width: 18vh;
     font-size: 22px;
     transition: all 0.25s ease-in-out;
+    user-select: none;
 }
 .progress-bar {
     left: 10%; width: 90%; height: 1vh;
@@ -461,8 +471,12 @@ a.icon:hover {
     width: 100%;
     height: 100%;
     z-index: 1;
-    animation: loading-blob-animation 2.2s ease-in-out forwards;
+    animation: loading-blob-animation 1.5s ease-in-out forwards;
     visibility: visible;
+}
+
+.loading-blob-animation-end {
+    animation: loading-blob-animation-end 0.3s ease-in-out forwards;
 }
 
 .rocket {
