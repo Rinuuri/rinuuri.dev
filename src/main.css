@@ -92,15 +92,44 @@
 
 @keyframes loading-blob-animation {
     0% {
-        transform: translateX(-50vh);
+        transform: translateX(-100%) translateY(30%);
     }
-    50% {
-        
+    30% {
+        transform: translateX(-40%) translateY(-50%);
+    }
+    70% {
+        transform: translateX(-40%) translateY(-50%);
     }
     100% {
-        transform: translateX(100vh);
+        transform: translateX(115%) translateY(-155%);;
     }
 }
+
+@keyframes rocket-animation {
+    0% {
+        transform: translateX(-0.25svh) translateY(-0.25svh);
+    }
+    50% {
+        transform: translateX(0.25svh) translateY(0.25svh);
+    }
+    100% {
+        transform: translateX(-0.25svh) translateY(-0.25svh);
+    }
+}
+
+
+@keyframes rocket-flame-animation {
+    0% {
+        transform: scaleY(70%);
+    }
+    50% {
+        transform: scaleY(130%);
+    }
+    100% {
+        transform: scaleY(70%);
+    }
+}
+
 
 *, html, body {
     font-family: "Host Grotesk", serif;
@@ -429,5 +458,18 @@ a.icon:hover {
 
 .loading-blob {
     position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
     animation: loading-blob-animation 2s ease-in-out infinite;
+}
+
+.rocket {
+    animation: rocket-animation 0.5s ease-in-out infinite;
+}
+
+.rocket-flame {
+    transform-origin: top;
+    animation: rocket-flame-animation 0.5s ease-in-out infinite;
+    width: 15%; rotate: 45deg; position: absolute; bottom: 6%; left: 9%;
 }

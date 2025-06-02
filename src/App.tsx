@@ -25,14 +25,19 @@ export function App() {
             </div>
           </div>
         </div>
-        <div className="section">
+        <div className="section" style={{overflow: "hidden"}}>
             <div style={{display: "flex", justifyContent: "center"}}><h1>Hi, I'm <span className="highlight">Rinuuri</span> or just Alina</h1></div>
             I'm a Java/Kotlin developer, linux enthusiast and just a trans girl :) <br/><br/> And I'm obsessed with programming since my childhood,
             I primarely code in JVM languages like Java and Kotlin, and have experiance in parallel programming and system administration, but still
             I like to learn something new each and every day.
             I've worked on many commertial projects, so you may click next to see some of them ;)
-            <video src={require("./images/rocket.webm")} autoPlay loop muted style={{position: "absolute", left: "0px", bottom: "0px"}}/>
-            <img src={require("./images/blob.svg")} style={{position: "absolute", scale: 1.5}} className="loading_blob"/>
+            <div className="loading-blob">
+              <div className="rocket" style={{width: "20%", position: "absolute", left: "73%", top: "11%", zIndex: "1"}}>
+                <img src={require("./images/rocket.png")} style={{width: "100%"}}/>
+                <img className="rocket-flame" src={require("./images/rocket_flame.svg")}/>
+              </div>
+              <img src={require("./images/bitmap.svg")} style={{width: "100%", height: "100%", position: "absolute", scale: 1.9}} />
+            </div>
         </div>
         <Rollout />
       </div>
