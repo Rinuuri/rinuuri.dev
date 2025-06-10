@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ProgrammingLanguages from "./ProgrammingLanguages";
 
-export default function Rollout(clickable: boolean) {
+export default function Rollout(args: Dict<any>) {
     const [animate, setAnimate] = useState(false);
     const [rolledOut, setRolledOut] = useState(false);
     const [rollIn, setRollIn] = useState(false);
@@ -13,7 +13,7 @@ export default function Rollout(clickable: boolean) {
     };
 
     const handleClick = () => {
-        if (!clickable) return;
+        if (!args.clickable) return;
         if (!rolledOut) setAnimate(true);
         else {
             setRolledOut(false);
@@ -21,13 +21,9 @@ export default function Rollout(clickable: boolean) {
         }
     };
 
-    useEffect(() => {
-        console.log(clickable);
-    }, [clickable]);
-
     return (
         <div style={{display: "flex", justifyContent: "center", position: "absolute", width: "100%", height: "0px"}}>
-            <div style={{pointerEvents: clickable ? 'auto' : 'none' }} className={"rollout" + (animate ? " rolling-out" : "") + (rolledOut ? " rolled-out" : "") + (rollIn ? " rolling-in" : "")} onAnimationEnd={handleAnimationEnd} onClick={handleClick}>
+            <div style={{pointerEvents: args.clickable ? 'auto' : 'none' }} className={"rollout" + (animate ? " rolling-out" : "") + (rolledOut ? " rolled-out" : "") + (rollIn ? " rolling-in" : "")} onAnimationEnd={handleAnimationEnd} onClick={handleClick}>
                 <ProgrammingLanguages />
                 <div className="button" />
             </div>
