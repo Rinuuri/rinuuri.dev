@@ -101,7 +101,7 @@
         transform: translateX(-60%) translateY(-50%);
     }
     100% {
-        transform: translateX(10%) translateY(-100%);
+        transform: translateX(10%) translateY(-101%);
     }
 }
 
@@ -129,13 +129,37 @@
 
 @keyframes rocket-flame-animation {
     0% {
-        transform: scaleY(70%);
+        transform: scaleY(80%) scaleX(110%);
     }
     50% {
-        transform: scaleY(130%);
+        transform: scaleY(120%) scaleX(90%);
     }
     100% {
-        transform: scaleY(70%);
+        transform: scaleY(80%) scaleX(110%);
+    }
+}
+
+@keyframes rollout-hide {
+    0% {
+
+    }
+    99% {
+        transform: translateY(-10vh);
+    }
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes rollout-hide {
+    0% {
+
+    }
+    98% {
+        transform: translateY(-12%);
+    }
+    100% {
+        visibility: hidden;
     }
 }
 
@@ -278,6 +302,7 @@ body {
     bottom: 32svh;
     filter: blur(0.2svh);
     z-index: -1;
+    user-select: none;
 }
 .rollout:hover {
     transform: translateY(1svh);
@@ -492,4 +517,9 @@ a.icon:hover {
 .hidden {
     animation: none;
     visibility: hidden;
+}
+
+.hidden .rollout {
+    visibility: visible;
+    animation: rollout-hide 1s ease-in-out forwards;
 }

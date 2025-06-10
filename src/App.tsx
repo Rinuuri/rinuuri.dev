@@ -40,8 +40,8 @@ export function App() {
             I primarely code in JVM languages like Java and Kotlin, and have experiance in parallel programming and system administration, but still
             I like to learn something new each and every day.
             I've worked on many commertial projects, so you may click next to see some of them ;)
-            <button onClick={() => {setAnimate(true);}} style={{position: "absolute",bottom: "1svh", left: "calc(50% - 9svh)"}}><img src={require("./images/rocket.png")} style={{width: "25%", position: "absolute", right: "35%", bottom: "13%", filter: "invert(100%) brightness(80%)"}}/></button>
             </span>
+            <button onClick={() => {setAnimate(true);}} style={{position: "absolute",bottom: "1svh", left: "calc(50% - 9svh)"}}><img src={require("./images/rocket.png")} style={{width: "25%", position: "absolute", right: "35%", bottom: "13%", filter: "invert(100%) brightness(80%)"}}/></button>
             <div className={"loading-blob" + (animate ? "" : " hidden") + (animateEnd ? " loading-blob-animation-end" : "")} onAnimationEnd={async function() {
                 if (!animateEnd) {
                   setTest(!test)
@@ -59,7 +59,7 @@ export function App() {
               <img src={require("./images/bitmap.svg")} style={{width: "100%", height: "100%", position: "absolute", scale: 1.9}} />
             </div>
         </div>
-        <Rollout />
+        <div className={(test) ? "" : "hidden"}><Rollout clickable={!animate} /></div>
       </div>
       <Background />
     </>
