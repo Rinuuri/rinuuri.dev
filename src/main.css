@@ -174,7 +174,6 @@
 }
 
 
-
 *, html, body {
     font-family: "Host Grotesk", serif;
     font-optical-sizing: auto;
@@ -245,7 +244,7 @@ body {
     overflow: hidden; 
     bottom: 0; 
     border-top-left-radius: 20px; 
-    border-top-right-radius: 20px;
+    border-top-right-radius: 20blovpx;
     transition: all 0.3s ease-in-out;
     transform-origin: center bottom;
     transform: scale(1);
@@ -286,7 +285,6 @@ body {
     padding-right: 48px;
     padding-bottom: 48px;
     margin-bottom: 24px;
-    margin-right: 1%;
     transition: all 0.2s ease-in-out;
     transform-origin: center;
     transform: scale(1);
@@ -527,6 +525,9 @@ a.icon:hover {
 
 .rocket {
     animation: rocket-animation 0.5s ease-in-out infinite;
+    width: 30%;
+     left: 25%;
+      top: 20%;
 }
 
 .rocket-flame {
@@ -546,4 +547,40 @@ a.icon:hover {
 }
 .show .rollout {
     animation: rollout-show 1s ease-in-out forwards;
+}
+
+.stupid-shit {
+    user-select:  none;
+    position: fixed;
+     z-index: 2;
+      height: 30%;
+       width: 50%;
+        left: 22.5%; 
+        top: 30%;
+}
+
+.blob {
+    transform-origin: top right;
+    transform: scale(2.5);
+    position: relative;
+    top: -42.5%;
+    right: 7.5%;
+}
+
+@media (max-width: 1080px) {
+ .rocket {
+    width: 40%;
+    left: 15%;
+    top: 35%
+ }
+ .section {
+    height: 60vh;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+ }
+ .stupid-shit {
+    left: 0%;
+    width: 100%;
+
+ }
 }

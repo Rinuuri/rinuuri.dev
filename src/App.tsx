@@ -33,7 +33,7 @@ export function App() {
       <div id="language-div">
 				<canvas ref={canvasRef} id="language-renderer"></canvas>
 			</div>
-      <div style={{position: "fixed", zIndex: "2", height: "30%", width: "50%", left: "22.5%", top: "30%"}}>
+      <div className="stupid-shit">
         <div id="profile-picture-div">
           <div className="circular-mask profile-gradient">
             <div className="circular-mask" style={{margin: "0.28svh"}}>
@@ -50,7 +50,7 @@ export function App() {
             <button onClick={() => {setAnimate(true);}} style={{position: "absolute",bottom: "1svh", left: "calc(50% - 9svh)"}}><img src={require("./images/rocket.png")} style={{width: "25%", position: "absolute", right: "35%", bottom: "13%", filter: "invert(100%) brightness(80%)"}}/></button>
             </span>
             <div className="rocket-mask">
-              <div style={{border: "red 5px solid", zIndex: 10}} className={"loading-blob" + (animate ? "" : " hidden") + (animateEnd ? " loading-blob-animation-end" : "")} onAnimationEnd={async function() {
+              <div className={"loading-blob" + (animate ? "" : " hidden") + (animateEnd ? " loading-blob-animation-end" : "")} onAnimationEnd={async function() {
                   if (!animateEnd) {
                     setTest(!test)
                     await sleep(200);
@@ -60,10 +60,11 @@ export function App() {
                     setAnimateEnd(false);
                   }
                 }}>
-                <div className="rocket" style={{zIndex: "1", position: "absolute", width: "30%", left: "35%", top: "35%", border: "red 5px solid"}}>
+                <div className="rocket" style={{zIndex: "1", position: "absolute"}}>
                   <img src={require("./images/rocket.png")} style={{width: "100%"}}/>
                   <img className="rocket-flame" src={require("./images/rocket_flame.svg")}/>
                 </div>
+                <img className="blob" src={require("./images/bitmap.svg")} />
               </div>
             </div>
         </div>
