@@ -163,6 +163,17 @@
     }
 }
 
+@keyframes rollout-show {
+    0% {
+        transform: translateY(-12%);
+        z-index: -3;
+    }
+    100% {
+        z-index: -3;
+    }
+}
+
+
 
 *, html, body {
     font-family: "Host Grotesk", serif;
@@ -180,8 +191,9 @@ body {
     background: black;
 }
 #background-renderer {
-    position: fixed; z-index: -1000; width: 100%; height: 100%; margin: 0; padding: 0;
-    filter: blur(0.2svh);
+    position: fixed; z-index: -1000; width: 100%; height: 100vh; margin: 0; padding: 0;
+    image-rendering: optimizeSpeed;
+    filter: blur(0.3svh);
 }
 .circular-mask {
     border-radius: 50%;
@@ -519,7 +531,10 @@ a.icon:hover {
     visibility: hidden;
 }
 
-.hidden .rollout {
+.hide .rollout {
     visibility: visible;
     animation: rollout-hide 1s ease-in-out forwards;
+}
+.show .rollout {
+    animation: rollout-show 1s ease-in-out forwards;
 }

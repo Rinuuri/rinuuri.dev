@@ -2,7 +2,7 @@ uniform vec2 u_resolution;
 uniform float aspect;
 uniform float u_time;
 uniform float u_time_sin;
-uniform vec2 u_mouse;
+//uniform vec2 u_mouse;
 uniform float u_scale;
 
 // Worley noise implementation, credits to https://github.com/Erkaman
@@ -64,12 +64,12 @@ vec2 worley(vec3 P, float jitter) {
 void main() {
 	vec2 pixelPos = gl_FragCoord.xy / u_resolution;
 	pixelPos.x *= aspect;
-	float distanceIN = max(0.2-length(pixelPos - vec2((1.0-u_mouse.x)*aspect, 1.0-u_mouse.y)), 0.0);
-	pixelPos *= 10.0/u_scale;
+	//float distanceIN = max(0.1-length(pixelPos - vec2((1.0-u_mouse.x)*aspect, 1.0-u_mouse.y)), 0.0);
+	pixelPos *= 12.0/u_scale;
     pixelPos += u_time_sin;
     float noise2 = worley(vec3(pixelPos, u_time+1.25), 1.0).x;
     float noise1 = worley(vec3(pixelPos*1.1, u_time), 1.0).x;
     float strengh = step(noise1, 0.07)*0.2+step(noise2, 0.04)*0.6;
-	strengh += distanceIN*(0.9-step(strengh, 0.01))*5.0;
+	//strengh += distanceIN*(0.9-step(strengh, 0.01))*5.0;
     gl_FragColor = vec4(strengh, strengh-0.25, strengh, 1.0);
 }

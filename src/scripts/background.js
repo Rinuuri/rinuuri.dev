@@ -11,7 +11,7 @@ export async function init(canvas) {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(0, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({antialias: false, canvas: canvas});
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth/2, window.innerHeight/2, false);
     const composer = new EffectComposer( renderer );
     
     const uniforms = {
@@ -21,7 +21,6 @@ export async function init(canvas) {
         aspect: {value: window.innerWidth/ window.innerHeight},
         u_time_sin: {value: 0},
         u_time: {value: 0},
-        u_mouse: {value: new THREE.Vector2(0.5, 0.5)},
         u_scale: {value: window.innerHeight/1000}     
     }
     
@@ -37,12 +36,9 @@ export async function init(canvas) {
         postprocessingshader.uniforms.u_resolution.value = new THREE.Vector2(window.innerWidth, window.innerHeight)
                                 .multiplyScalar(window.devicePixelRatio);                    
         postprocessingshader.uniforms.aspect.value = aspect;
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(window.innerWidth/2, window.innerHeight/2, false);
     });
 
-    window.addEventListener('mousemove', function(event) {
-        postprocessingshader.uniforms.u_mouse.value = new THREE.Vector2(1-event.clientX/window.innerWidth, event.clientY/window.innerHeight)
-      });
     renderer.setAnimationLoop( animate );
 
     function animate() {

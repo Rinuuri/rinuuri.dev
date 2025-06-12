@@ -20,6 +20,13 @@ export function App() {
   const [animate, setAnimate] = useState(false);
   const [animateEnd, setAnimateEnd] = useState(false);
   const [test, setTest] = useState(true);
+  const [showRollout, setShowRollout] = useState(true);
+
+  useEffect(() => {
+      if (!test) {
+          setShowRollout(true);
+      }
+  }, [test]);
 
   return (
     <>
@@ -59,7 +66,7 @@ export function App() {
               <img src={require("./images/bitmap.svg")} style={{width: "100%", height: "100%", position: "absolute", scale: 1.9}} />
             </div>
         </div>
-        <div className={(test) ? "" : "hidden"}><Rollout clickable={!animate} /></div>
+        <div className={test ? "" : "hide"} onAnimationEnd={() => setShowRollout(false)}><Rollout clickable={!animate} /></div>
       </div>
       <Background />
     </>
