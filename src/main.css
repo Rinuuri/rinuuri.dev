@@ -92,25 +92,25 @@
 
 @keyframes loading-blob-animation {
     0% {
-        transform: translateX(-120%) translateY(40%);
+        transform: translateX(-120%) translateY(100%);
     }
     30% {
-        transform: translateX(-60%) translateY(-50%);
+        transform: translateX(0%) translateY(0%);
     }
     80% {
-        transform: translateX(-60%) translateY(-50%);
+        transform: translateX(0%) translateY(0%);
     }
     100% {
-        transform: translateX(10%) translateY(-101%);
+        transform: translateX(100%) translateY(-100%);
     }
 }
 
 @keyframes loading-blob-animation-end {
     0% {
-        transform: translateX(10%) translateY(-101%);
+        transform: translateX(100%) translateY(-100%);
     }
     100% {
-        transform: translateX(125%) translateY(-200%);
+        transform: translateX(200%) translateY(-200%);
     }
 }
 
@@ -291,6 +291,15 @@ body {
     transform-origin: center;
     transform: scale(1);
     position: relative;
+}
+.section .rocket-mask {
+    border-radius: 4vh;
+     position:absolute;
+      height: 100%;
+       width: 100%;
+        left: 0px;
+         top: 0px; 
+         pointer-events: none;
 }
 .rollout {
     background: rgb(15, 15, 15);

@@ -41,32 +41,33 @@ export function App() {
             </div>
           </div>
         </div>
-        <div className="section" style={{overflow: "hidden"}}>
+        <div className="section">
             <span className={test ? "" : "hidden"}><div style={{display: "flex", justifyContent: "center"}}><h1>Hi, I'm <span className="highlight">Rinuuri</span> or just Alina</h1></div>
             I'm a Java/Kotlin developer, linux enthusiast and just a trans girl :) <br/><br/> And I'm obsessed with programming since my childhood,
             I primarely code in JVM languages like Java and Kotlin, and have experiance in parallel programming and system administration, but still
             I like to learn something new each and every day.
             I've worked on many commertial projects, so you may click next to see some of them ;)
-            </span>
             <button onClick={() => {setAnimate(true);}} style={{position: "absolute",bottom: "1svh", left: "calc(50% - 9svh)"}}><img src={require("./images/rocket.png")} style={{width: "25%", position: "absolute", right: "35%", bottom: "13%", filter: "invert(100%) brightness(80%)"}}/></button>
-            <div className={"loading-blob" + (animate ? "" : " hidden") + (animateEnd ? " loading-blob-animation-end" : "")} onAnimationEnd={async function() {
-                if (!animateEnd) {
-                  setTest(!test)
-                  await sleep(200);
-                  setAnimateEnd(true);
-                } else {
-                  setAnimate(false);
-                  setAnimateEnd(false);
-                }
-              }}>
-              <div className="rocket" style={{width: "20%", position: "absolute", left: "90%", top: "11%", zIndex: "1"}}>
-                <img src={require("./images/rocket.png")} style={{width: "100%"}}/>
-                <img className="rocket-flame" src={require("./images/rocket_flame.svg")}/>
+            </span>
+            <div className="rocket-mask">
+              <div style={{border: "red 5px solid", zIndex: 10}} className={"loading-blob" + (animate ? "" : " hidden") + (animateEnd ? " loading-blob-animation-end" : "")} onAnimationEnd={async function() {
+                  if (!animateEnd) {
+                    setTest(!test)
+                    await sleep(200);
+                    setAnimateEnd(true);
+                  } else {
+                    setAnimate(false);
+                    setAnimateEnd(false);
+                  }
+                }}>
+                <div className="rocket" style={{zIndex: "1", position: "absolute", width: "30%", left: "35%", top: "35%", border: "red 5px solid"}}>
+                  <img src={require("./images/rocket.png")} style={{width: "100%"}}/>
+                  <img className="rocket-flame" src={require("./images/rocket_flame.svg")}/>
+                </div>
               </div>
-              <img src={require("./images/bitmap.svg")} style={{width: "100%", height: "100%", position: "absolute", scale: 1.9}} />
             </div>
         </div>
-        <div className={test ? "" : "hide"} onAnimationEnd={() => setShowRollout(false)}><Rollout clickable={!animate} /></div>
+        <div className={test ? "" : "hide"} onAnimationEnd={() => setShowRollout(false)}><Rollout clickable={!animate} hidden={test} /></div>
       </div>
       <Background />
     </>

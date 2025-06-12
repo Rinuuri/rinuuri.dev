@@ -19,8 +19,8 @@ export async function init(canvas) {
                                 .multiplyScalar(window.devicePixelRatio)
         },
         aspect: {value: window.innerWidth/ window.innerHeight},
-        u_time_sin: {value: 0},
         u_time: {value: 0},
+        u_mouse: {value: new THREE.Vector2(0.5, 0.5)},
         u_scale: {value: window.innerHeight/1000}     
     }
     
@@ -38,6 +38,10 @@ export async function init(canvas) {
         postprocessingshader.uniforms.aspect.value = aspect;
         renderer.setSize(window.innerWidth/2, window.innerHeight/2, false);
     });
+
+    window.addEventListener('mousemove', function(event) {
+        postprocessingshader.uniforms.u_mouse.value = new THREE.Vector2(1-event.clientX/window.innerWidth/2, event.clientY/window.innerHeight/2+0.5)
+      });
 
     renderer.setAnimationLoop( animate );
 
