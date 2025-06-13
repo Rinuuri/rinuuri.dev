@@ -68,14 +68,13 @@
     }
     100% {
         z-index: 3;
-        box-shadow: var(--rollout-glow) 0px 0px 4svh 0px;
+        transform: none;
     }
 }
 
 @keyframes rollout-rollingin {
     0% {
         z-index: 3;
-        box-shadow: var(--rollout-glow) 0px 0px 4svh 0px;
     }
     49% {
         transform: translateY(29svh);
@@ -303,7 +302,7 @@ body {
          pointer-events: none;
 }
 .rollout {
-    background: linear-gradient(to bottom right, rgba(55, 30, 55, 0.5), rgba(55, 18, 55, 0.5));
+    background: rgba(63, 22, 63, 0.3);
     filter: blur(10px); 
     border-radius: 4vh;
     padding-top: 2svh;
@@ -322,12 +321,16 @@ body {
     filter: blur(0.2svh);
     z-index: -1;
     user-select: none;
-    backdrop-filter: blur(1vh);
+    backdrop-filter: blur(2vh);
+    box-shadow: 0 0 0 0.1em hsla(295, 41%, 42%, 0.2) inset;
 }
 .rollout:hover {
     transform: translateY(1svh);
+    background: rgba(63, 22, 63, 0.5);
+    backdrop-filter: blur(2.2vh);
     cursor: pointer;
     filter: none;
+    box-shadow: 0 0 0 0.1em hsla(295, 41%, 42%, 0.35) inset;
 }
 .rolling-out {
     animation: rollout-rollingout 1s ease-in-out forwards;
@@ -338,7 +341,11 @@ body {
 .rolled-out {
     z-index: 3;
     filter: none;
-    box-shadow: var(--rollout-glow) 0px 0px 4svh 0px;
+}
+
+.rolled-out:hover {
+    cursor: pointer;
+    transform: none;
 }
 
 .rollout .button {
@@ -360,7 +367,7 @@ body {
     margin-left: 2%;
     margin-bottom: 0px;
 }
-.section:after {
+.has-shard:after {
     width: 1px;
     height: 80px;
     background: linear-gradient(
@@ -375,7 +382,7 @@ body {
     transition: all 0.15s ease-in-out;
     content: "";
 }
-.section:hover:after {
+.has-shard:hover:after {
     top: 20%;
     opacity: 100%;
 }

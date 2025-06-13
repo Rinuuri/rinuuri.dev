@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 import translations from '../translations.json' assert { type: 'json' };
-import engPath from '../images/english.png'
-import nldPath from '../images/dutch.jpg'
-import rusPath from '../images/russian.jpg'
+import engPath from '../images/english.webp'
+import nldPath from '../images/dutch.webp'
+import rusPath from '../images/russian.webp'
 
 export async function init(canvas) {
   let language = "en";

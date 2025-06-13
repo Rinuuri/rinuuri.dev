@@ -37,11 +37,11 @@ export function App() {
         <div id="profile-picture-div">
           <div className="circular-mask profile-gradient">
             <div className="circular-mask" style={{margin: "0.28svh"}}>
-              <img src={require("./images/profile_picture.jpg")} style={{translate: "7.5% 7.5% 0px"}} alt="Profile picture" id="profile-picture-img" />
+              <img src={require("./images/profile_picture.webp")} style={{translate: "7.5% 7.5% 0px"}} alt="Profile picture" id="profile-picture-img" />
             </div>
           </div>
         </div>
-        <div className="section" style={{overflow: "hidden"}}>
+        <div className="section has-shard" style={{overflow: "hidden"}}>
             <span className={test ? "" : "hidden"}><div style={{display: "flex", justifyContent: "center"}}><h1>Hi, I'm <span className="highlight">Rinuuri</span> or just Alina</h1></div>
             I'm a Java/Kotlin developer, linux enthusiast and just a trans girl :) <br/><br/> And I'm obsessed with programming since my childhood,
             I primarely code in JVM languages like Java and Kotlin, and have experiance in parallel programming and system administration, but still
