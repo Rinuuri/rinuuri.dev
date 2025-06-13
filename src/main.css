@@ -110,7 +110,7 @@
         transform: translateX(100%) translateY(-100%);
     }
     100% {
-        transform: translateX(200%) translateY(-200%);
+        transform: translateX(300%) translateY(-600%);
     }
 }
 
@@ -155,10 +155,11 @@
     0% {
 
     }
-    98% {
+    99% {
         transform: translateY(-12%);
     }
     100% {
+        transform: translateY(-12%);
         visibility: hidden;
     }
 }
@@ -267,6 +268,7 @@ body {
   position: fixed;
   width: 100%; height: 100%;
   top: 0px;
+  user-select: none;
 }
 .devider {
     position: absolute; left: 60%; top: 0; height: 100%; width: 0.4vh; background-color: rgba(209, 209, 209, 0.1);
@@ -289,6 +291,7 @@ body {
     transform-origin: center;
     transform: scale(1);
     position: relative;
+    user-select: text;
 }
 .section .rocket-mask {
     border-radius: 4vh;
@@ -389,7 +392,7 @@ body {
 }
 .section button {
     color: white;
-    background-color: #e032e0;
+    background-color:rgb(92, 0, 100);
     border-radius: 120px;
     height: 6svh;
     border: none;
@@ -435,15 +438,7 @@ h1,h2,h3,h4,h5 {
     width: max-content;
 }
 button:hover {
-    animation-play-state: running;
     scale: 105%;
-}
-button {
-    background: linear-gradient(to right, rgb(73, 0, 80), rgb(126, 0, 138), rgb(73, 0, 80));
-    background-size: 200%;
-    animation: background-pan 3s linear infinite;
-    animation-play-state: paused;
-    cursor: pointer;
 }
 .highlight {
     animation: background-pan 3s linear infinite;
@@ -525,9 +520,9 @@ a.icon:hover {
 
 .rocket {
     animation: rocket-animation 0.5s ease-in-out infinite;
-    width: 30%;
-     left: 25%;
-      top: 20%;
+    width: 18vh;
+    right: 57%;
+    top: 40%;
 }
 
 .rocket-flame {
@@ -558,29 +553,44 @@ a.icon:hover {
         left: 22.5%; 
         top: 30%;
 }
-
-.blob {
-    transform-origin: top right;
-    transform: scale(2.5);
-    position: relative;
-    top: -42.5%;
-    right: 7.5%;
+.blob { 
+    position: absolute; right: -5%; top: -5%; aspect-ratio: 1/1; width: 280%;
 }
 
 @media (max-width: 1080px) {
- .rocket {
-    width: 40%;
-    left: 15%;
-    top: 35%
- }
- .section {
+    .blob { 
+        right: -50%; top: 0%; width: 450%;
+    }
+    .rocket {
+        width: 40vw;
+        top: 45%;
+        left: 2%;
+    }
+    .section {
     height: 60vh;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
- }
- .stupid-shit {
+    }
+    .stupid-shit {
     left: 0%;
     width: 100%;
+    }
+}
 
- }
+@media (max-width: 500px) {
+    @keyframes loading-blob-animation-end {
+    0% {
+        transform: translateX(100%) translateY(-100%);
+    }
+    100% {
+        transform: translateX(300%) translateY(-300%);
+    }
+}
+    .rocket {
+        width: 50vw;
+        top: 55%;
+    }
+    .blob { 
+        right: -10%; top: 0%; width: 450%;
+    }
 }

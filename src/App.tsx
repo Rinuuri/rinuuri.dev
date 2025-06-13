@@ -41,7 +41,7 @@ export function App() {
             </div>
           </div>
         </div>
-        <div className="section">
+        <div className="section" style={{overflow: "hidden"}}>
             <span className={test ? "" : "hidden"}><div style={{display: "flex", justifyContent: "center"}}><h1>Hi, I'm <span className="highlight">Rinuuri</span> or just Alina</h1></div>
             I'm a Java/Kotlin developer, linux enthusiast and just a trans girl :) <br/><br/> And I'm obsessed with programming since my childhood,
             I primarely code in JVM languages like Java and Kotlin, and have experiance in parallel programming and system administration, but still
@@ -61,10 +61,10 @@ export function App() {
                   }
                 }}>
                 <div className="rocket" style={{zIndex: "1", position: "absolute"}}>
-                  <img src={require("./images/rocket.png")} style={{width: "100%"}}/>
+                  <img className="rocket-img" src={require("./images/rocket.png")} style={{width: "100%"}}/>
                   <img className="rocket-flame" src={require("./images/rocket_flame.svg")}/>
                 </div>
-                <img className="blob" src={require("./images/bitmap.svg")} />
+                <img src={require("./images/bitmap.svg")} className="blob" />
               </div>
             </div>
         </div>
