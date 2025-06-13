@@ -92,7 +92,7 @@
 
 @keyframes loading-blob-animation {
     0% {
-        transform: translateX(-120%) translateY(100%);
+        transform: translateX(-100%) translateY(100%);
     }
     30% {
         transform: translateX(0%) translateY(0%);
@@ -101,16 +101,16 @@
         transform: translateX(0%) translateY(0%);
     }
     100% {
-        transform: translateX(100%) translateY(-100%);
+        transform: translateX(50%) translateY(-50%);
     }
 }
 
 @keyframes loading-blob-animation-end {
     0% {
-        transform: translateX(100%) translateY(-100%);
+        transform: translateX(50%) translateY(-50%);
     }
     100% {
-        transform: translateX(300%) translateY(-600%);
+        transform: translateX(100%) translateY(-200%);
     }
 }
 
@@ -303,11 +303,8 @@ body {
          pointer-events: none;
 }
 .rollout {
-    background: rgb(15, 15, 15);
-    background: linear-gradient(to bottom right, rgba(36, 21, 36), rgba(52, 20, 52));
-    background: -webkit-linear-gradient(to bottom right, rgba(15,15,16), rgb(44, 18, 44));
-    background: -moz-linear-gradient(to bottom right, rgba(15,15,16), rgb(44, 18, 44));
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f0f10",endColorstr="#152137",GradientType=1);
+    background: linear-gradient(to bottom right, rgba(55, 30, 55, 0.5), rgba(55, 18, 55, 0.5));
+    filter: blur(10px); 
     border-radius: 4vh;
     padding-top: 2svh;
     padding-left: 35px;
@@ -325,6 +322,7 @@ body {
     filter: blur(0.2svh);
     z-index: -1;
     user-select: none;
+    backdrop-filter: blur(1vh);
 }
 .rollout:hover {
     transform: translateY(1svh);
@@ -342,6 +340,7 @@ body {
     filter: none;
     box-shadow: var(--rollout-glow) 0px 0px 4svh 0px;
 }
+
 .rollout .button {
     position: absolute;
     bottom: 3%;
@@ -507,9 +506,11 @@ a.icon:hover {
 
 .loading-blob {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 200%;
+    aspect-ratio: 1/1;
     z-index: 1;
+    right: 20%;
+    top: 0;
     animation: loading-blob-animation 1.5s ease-in-out forwards;
     visibility: visible;
 }
@@ -521,14 +522,14 @@ a.icon:hover {
 .rocket {
     animation: rocket-animation 0.5s ease-in-out infinite;
     width: 18vh;
-    right: 57%;
-    top: 40%;
+    right: 20%;
+    top: 10%;
 }
 
 .rocket-flame {
     transform-origin: top;
     animation: rocket-flame-animation 0.5s ease-in-out infinite;
-    width: 15%; rotate: 45deg; position: absolute; bottom: 6%; left: 9.5%;
+    width: 15%; rotate: 45deg; position: absolute; bottom: 5%; left: 10%;
 }
 
 .hidden {
@@ -554,17 +555,12 @@ a.icon:hover {
         top: 30%;
 }
 .blob { 
-    position: absolute; right: -5%; top: -5%; aspect-ratio: 1/1; width: 280%;
+    position: absolute; right: 0%; top: 0%; aspect-ratio: 1/1; width: 100%;
 }
 
 @media (max-width: 1080px) {
-    .blob { 
-        right: -50%; top: 0%; width: 450%;
-    }
     .rocket {
         width: 40vw;
-        top: 45%;
-        left: 2%;
     }
     .section {
     height: 60vh;
@@ -574,23 +570,5 @@ a.icon:hover {
     .stupid-shit {
     left: 0%;
     width: 100%;
-    }
-}
-
-@media (max-width: 500px) {
-    @keyframes loading-blob-animation-end {
-    0% {
-        transform: translateX(100%) translateY(-100%);
-    }
-    100% {
-        transform: translateX(300%) translateY(-300%);
-    }
-}
-    .rocket {
-        width: 50vw;
-        top: 55%;
-    }
-    .blob { 
-        right: -10%; top: 0%; width: 450%;
     }
 }
