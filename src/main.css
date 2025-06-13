@@ -92,7 +92,7 @@
 
 @keyframes loading-blob-animation {
     0% {
-        transform: translateX(-100%) translateY(100%);
+        transform: translateX(-30%) translateY(30%);
     }
     30% {
         transform: translateX(0%) translateY(0%);
@@ -475,7 +475,7 @@ a.icon:hover {
 }
 .gradient-overlay img {
     position: absolute;
-    z-index: 100000000;
+    z-index: 5;
     width: 7vh; height: 7vh; transform-origin: 50% 50%; animation: float-rotate 6s ease-in-out infinite;
     filter: blur(0.6svh);
     transition-duration: 0.5s;
@@ -485,6 +485,49 @@ a.icon:hover {
     filter: none;
     scale: 1.5;
 }
+
+.gradient-overlay .l1 {
+    top: 20%;
+    margin-left: 85%;
+    animation-delay: -1s;
+}
+
+.gradient-overlay .l2 {
+    top: 10%;
+    margin-left: 80%;
+    animation-delay: -3s;
+}
+
+.gradient-overlay .l3 {
+    top: 40%;
+    margin-left: 6%;
+    animation-delay: -2s;
+}
+
+.gradient-overlay .l4 {
+    top: 84%;
+    margin-left: 20%;
+    animation-delay: -4s;
+}
+
+.gradient-overlay .l5 {
+    top: 20%;
+    margin-left: 15%;
+    animation-delay: -5s;
+}
+
+.gradient-overlay .l6 {
+    top: 90%;
+    margin-left: 70%;
+    animation-delay: -2s;
+}
+
+.gradient-overlay .l7 {
+    top: 60%;
+    margin-left: 90%;
+    animation-delay: -4s;
+}
+
 .rotate-away {
     transform-origin: 50% 0px 50vh;
     transform: rotateY(-90deg);
@@ -510,13 +553,13 @@ a.icon:hover {
     aspect-ratio: 1/1;
     z-index: 1;
     right: 20%;
-    top: 0;
+    top: -2vw;
     animation: loading-blob-animation 1.5s ease-in-out forwards;
     visibility: visible;
 }
 
 .loading-blob-animation-end {
-    animation: loading-blob-animation-end 0.3s ease-in-out forwards;
+    animation: loading-blob-animation-end 0.5s ease-in-out forwards;
 }
 
 .rocket {
@@ -560,15 +603,65 @@ a.icon:hover {
 
 @media (max-width: 1080px) {
     .rocket {
-        width: 40vw;
+        width: 45vw;
+        top: 20%;
+        right: 10%;
+    }
+    .loading-blob {
+        width: 340%;
+        top: 10%;
     }
     .section {
-    height: 60vh;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+        height: 60vh;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
     .stupid-shit {
-    left: 0%;
-    width: 100%;
+        left: 0%;
+        width: 100%;
     }
+
+    .gradient-overlay img {
+        filter: none;
+        transform: scale(0.4);
+    }
+
+    .gradient-overlay .l1 {
+        top: 10%;
+        margin-left: 80%;
+        visibility: hidden;
+    }
+
+    .gradient-overlay .l2 {
+        top: 2%;
+        margin-left: 50%;
+    }
+
+    .gradient-overlay .l3 {
+        top: 5%;
+        margin-left: 20%;
+    }
+
+    .gradient-overlay .l4 {
+        top: 20%;
+        margin-left: 10%;
+    }
+
+    .gradient-overlay .l5 {
+        top: 20%;
+        margin-left: 15%;
+        visibility: hidden;
+    }
+
+    .gradient-overlay .l6 {
+        top: 20%;
+        margin-left: 70%;
+    }
+
+    .gradient-overlay .l7 {
+        top: 15%;
+        margin-left: 50%;
+        visibility: hidden;
+    }
+
 }

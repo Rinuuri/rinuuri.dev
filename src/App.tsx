@@ -47,13 +47,13 @@ export function App() {
             I primarely code in JVM languages like Java and Kotlin, and have experiance in parallel programming and system administration, but still
             I like to learn something new each and every day.
             I've worked on many commertial projects, so you may click next to see some of them ;)
-            <button onClick={() => {setAnimate(true);}} style={{position: "absolute",bottom: "1svh", left: "calc(50% - 9svh)"}}><img src={require("./images/rocket.png")} style={{width: "25%", position: "absolute", right: "35%", bottom: "13%", filter: "invert(100%) brightness(80%)"}}/></button>
+            <button onClick={() => {setAnimate(true);}} style={{position: "absolute",bottom: "1svh", left: "calc(50% - 9svh)"}}><img src={require("./images/rocket.svg")} style={{width: "25%", position: "absolute", right: "35%", bottom: "13%", filter: "invert(100%) brightness(80%)"}}/></button>
             </span>
             <div className="rocket-mask">
               <div className={"loading-blob" + (animate ? "" : " hidden") + (animateEnd ? " loading-blob-animation-end" : "")} onAnimationEnd={async function() {
                   if (!animateEnd) {
                     setTest(!test)
-                    await sleep(200);
+                    await sleep(250);
                     setAnimateEnd(true);
                   } else {
                     setAnimate(false);
@@ -61,10 +61,10 @@ export function App() {
                   }
                 }}>
                 <div className="rocket" style={{zIndex: "1", position: "absolute"}}>
-                  <img className="rocket-img" src={require("./images/rocket.png")} style={{width: "100%"}}/>
+                  <img className="rocket-img" src={require("./images/rocket.svg")} style={{width: "100%"}}/>
                   <img className="rocket-flame" src={require("./images/rocket_flame.svg")}/>
                 </div>
-                <img src={require("./images/bitmap.svg")} className="blob" />
+                <img src={require("./images/blob.svg")} className="blob" />
               </div>
             </div>
         </div>
