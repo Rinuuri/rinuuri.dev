@@ -1,0 +1,150 @@
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: -200% center;
+    }
+}
+@keyframes bar {
+    0% {
+        background-position: 0% center;
+    }
+    33% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: -200% center;
+    }
+}
+@keyframes float {
+    0% {
+        transform: translateY(1.1svh)
+    }
+    50% {
+        transform: translateY(0svh)
+    }
+    100% {
+        transform: translateY(1.1svh)
+    }
+}
+
+@keyframes float-rotate {
+    0% {
+        transform: rotate(5deg)
+    }
+    50% {
+        transform: rotate(-5deg)
+    }
+    100% {
+        transform: rotate(5deg)
+    }
+}
+
+@keyframes rollout-rollingout {
+    0% {
+
+    }
+    49% {
+        transform: translateY(29svh);
+        z-index: -1;
+    }
+    50% {
+        transform: translateY(29svh);
+        z-index: 3;
+    }
+    100% {
+        z-index: 3;
+        transform: none;
+    }
+}
+
+@keyframes rollout-rollingin {
+    0% {
+        z-index: 3;
+    }
+    49% {
+        transform: translateY(29svh);
+        z-index: 3;
+    }
+    50% {
+        transform: translateY(29svh);
+        z-index:-1;
+    }
+    100% {
+        
+    }
+}
+
+@keyframes loading-blob-animation {
+    0% {
+        transform: translateX(-30%) translateY(30%);
+    }
+    30% {
+        transform: translateX(0%) translateY(0%);
+    }
+    70% {
+        transform: translateX(0%) translateY(0%);
+    }
+    100% {
+        transform: translateX(40%) translateY(-40%);
+    }
+}
+
+@keyframes loading-blob-animation-end {
+    0% {
+        transform: translateX(40%) translateY(-40%);
+    }
+    100% {
+        transform: translateX(100%) translateY(-200%);
+    }
+}
+
+@keyframes rocket-animation {
+    0% {
+        transform: translateX(-0.25svh) translateY(-0.25svh);
+    }
+    50% {
+        transform: translateX(0.25svh) translateY(0.25svh);
+    }
+    100% {
+        transform: translateX(-0.25svh) translateY(-0.25svh);
+    }
+}
+
+
+@keyframes rocket-flame-animation {
+    0% {
+        transform: scaleY(80%) scaleX(110%);
+    }
+    50% {
+        transform: scaleY(120%) scaleX(90%);
+    }
+    100% {
+        transform: scaleY(80%) scaleX(110%);
+    }
+}
+
+@keyframes rollout-hide {
+    0% {
+
+    }
+    99% {
+        transform: translateY(-12%);
+    }
+    100% {
+        transform: translateY(-12%);
+        visibility: hidden;
+    }
+}
+
+@keyframes rollout-show {
+    0% {
+        transform: translateY(-12%);
+        z-index: -3;
+    }
+    100% {
+        z-index: -3;
+    }
+}

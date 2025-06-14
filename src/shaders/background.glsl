@@ -63,10 +63,10 @@ vec2 worley(vec3 P, float jitter) {
 void main() {
 	vec2 pixelPos = gl_FragCoord.xy / u_resolution;
 	pixelPos.x *= aspect;
-	float distanceIN = max(0.1-length(pixelPos - vec2((1.0-u_mouse.x)*aspect, 1.0-u_mouse.y)), 0.0);
+	float distanceIN = max(0.05-length(pixelPos - vec2((1.0-u_mouse.x)*aspect, 1.0-u_mouse.y)), 0.0);
 	pixelPos *= 12.0/u_scale;
-    float noise2 = worley(vec3(pixelPos, u_time+1.25), 1.0).x;
-    float noise1 = worley(vec3(pixelPos*1.1, u_time), 1.0).x;
+    float noise2 = (worley(vec3(pixelPos, u_time+1.25), 1.0).x)-distanceIN;
+    float noise1 = (worley(vec3(pixelPos*1.1, u_time), 1.0).x)-distanceIN;
     float strengh = step(noise1, 0.06)*0.2+step(noise2, 0.04)*0.6;
 	strengh += distanceIN*(0.9-step(strengh, 0.01))*5.0;
     gl_FragColor = vec4(strengh, strengh-0.25, strengh, 1.0);

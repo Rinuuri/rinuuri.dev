@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import Background from "./components/Background";
+import "./animations.css";
 import "./main.css";
 import { init } from "./scripts/lang";
 import Rollout from "./components/Rollout";
-import { sleep } from "bun";
+import SpotlightCard from "./components/Spotlight";
 
 
 export function App() {
@@ -19,21 +20,21 @@ export function App() {
 
   const [animate, setAnimate] = useState(false);
   const [animateEnd, setAnimateEnd] = useState(false);
-  const [test, setTest] = useState(true);
+  const [screenChange, setTest] = useState(true);
   const [showRollout, setShowRollout] = useState(true);
 
   useEffect(() => {
-      if (!test) {
+      if (!screenChange) {
           setShowRollout(true);
       }
-  }, [test]);
+  }, [screenChange]);
 
   return (
     <>
       <div id="language-div">
 				<canvas ref={canvasRef} id="language-renderer"></canvas>
 			</div>
-      <div className="stupid-shit">
+      <div className={"stupid-shit"+(screenChange ? "" : " even-more-stupid-shit")}>
         <div id="profile-picture-div">
           <div className="circular-mask profile-gradient">
             <div className="circular-mask" style={{margin: "0.28svh"}}>
@@ -41,18 +42,21 @@ export function App() {
             </div>
           </div>
         </div>
-        <div className="section has-shard" style={{overflow: "hidden"}}>
-            <span className={test ? "" : "hidden"}><div style={{display: "flex", justifyContent: "center"}}><h1>Hi, I'm <span className="highlight">Rinuuri</span> or just Alina</h1></div>
+        <SpotlightCard className="section has-shard" spotlightColor="rgba(135, 38, 147, 0.2)">
+            <span className={screenChange ? "" : "hidden"}><div style={{display: "flex", justifyContent: "center"}}><h1>Hi, I'm <span className="highlight">Rinuuri</span> or just Alina</h1></div>
             I'm a Java/Kotlin developer, linux enthusiast and just a trans girl :) <br/><br/> And I'm obsessed with programming since my childhood,
             I primarely code in JVM languages like Java and Kotlin, and have experiance in parallel programming and system administration, but still
             I like to learn something new each and every day.
             I've worked on many commertial projects, so you may click next to see some of them ;)
-            <button onClick={() => {setAnimate(true);}} style={{position: "absolute",bottom: "1svh", left: "calc(50% - 9svh)"}}><img src={require("./images/rocket.svg")} style={{width: "25%", position: "absolute", right: "35%", bottom: "13%", filter: "invert(100%) brightness(80%)"}}/></button>
+           <button onClick={() => {setAnimate(true);}} style={{position: "absolute",bottom: "1svh", left: "calc(50% - 9svh)"}} >
+              <img src={require("./images/rocket.svg")}
+                style={{width: "25%", position: "absolute", right: "35%", bottom: "15%", filter: "invert(100%) brightness(80%)"}}/>
+            </button>
             </span>
             <div className="rocket-mask">
               <div className={"loading-blob" + (animate ? "" : " hidden") + (animateEnd ? " loading-blob-animation-end" : "")} onAnimationEnd={async function() {
                   if (!animateEnd) {
-                    setTest(!test)
+                    setTest(!screenChange)
                     await sleep(250);
                     setAnimateEnd(true);
                   } else {
@@ -67,8 +71,8 @@ export function App() {
                 <img src={require("./images/blob.svg")} className="blob" />
               </div>
             </div>
-        </div>
-        <div className={test ? "" : "hide"} onAnimationEnd={() => setShowRollout(false)}><Rollout clickable={!animate} hidden={test} /></div>
+        </SpotlightCard>
+        <div className={screenChange ? "" : "hide"} onAnimationEnd={() => setShowRollout(false)}><Rollout clickable={!animate} hidden={screenChange} /></div>
       </div>
       <Background />
     </>

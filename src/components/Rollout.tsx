@@ -7,7 +7,7 @@ export default function Rollout(args: Dict<boolean>) {
     const [rollIn, setRollIn] = useState(false);
 
     const handleAnimationEnd = () => {
-        setRolledOut(!rollIn);
+        if (args?.clickable) setRolledOut(!rollIn);
         setAnimate(false);
         setRollIn(false);
     };

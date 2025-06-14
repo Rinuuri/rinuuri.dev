@@ -11,168 +11,6 @@
   color: rgb(203, 202, 202);
 }
 
-@keyframes background-pan {
-    from {
-        background-position: 0% center;
-    }
-    to {
-        background-position: -200% center;
-    }
-}
-@keyframes bar {
-    0% {
-        background-position: 0% center;
-    }
-    33% {
-        background-position: -200% center;
-    }
-    100% {
-        background-position: -200% center;
-    }
-}
-@keyframes float {
-    0% {
-        transform: translateY(1.1svh)
-    }
-    50% {
-        transform: translateY(0svh)
-    }
-    100% {
-        transform: translateY(1.1svh)
-    }
-}
-
-@keyframes float-rotate {
-    0% {
-        transform: rotate(5deg)
-    }
-    50% {
-        transform: rotate(-5deg)
-    }
-    100% {
-        transform: rotate(5deg)
-    }
-}
-
-@keyframes rollout-rollingout {
-    0% {
-
-    }
-    49% {
-        transform: translateY(29svh);
-        z-index: -1;
-    }
-    50% {
-        transform: translateY(29svh);
-        z-index: 3;
-    }
-    100% {
-        z-index: 3;
-        transform: none;
-    }
-}
-
-@keyframes rollout-rollingin {
-    0% {
-        z-index: 3;
-    }
-    49% {
-        transform: translateY(29svh);
-        z-index: 3;
-    }
-    50% {
-        transform: translateY(29svh);
-        z-index:-1;
-    }
-    100% {
-        
-    }
-}
-
-@keyframes loading-blob-animation {
-    0% {
-        transform: translateX(-30%) translateY(30%);
-    }
-    30% {
-        transform: translateX(0%) translateY(0%);
-    }
-    80% {
-        transform: translateX(0%) translateY(0%);
-    }
-    100% {
-        transform: translateX(50%) translateY(-50%);
-    }
-}
-
-@keyframes loading-blob-animation-end {
-    0% {
-        transform: translateX(50%) translateY(-50%);
-    }
-    100% {
-        transform: translateX(100%) translateY(-200%);
-    }
-}
-
-@keyframes rocket-animation {
-    0% {
-        transform: translateX(-0.25svh) translateY(-0.25svh);
-    }
-    50% {
-        transform: translateX(0.25svh) translateY(0.25svh);
-    }
-    100% {
-        transform: translateX(-0.25svh) translateY(-0.25svh);
-    }
-}
-
-
-@keyframes rocket-flame-animation {
-    0% {
-        transform: scaleY(80%) scaleX(110%);
-    }
-    50% {
-        transform: scaleY(120%) scaleX(90%);
-    }
-    100% {
-        transform: scaleY(80%) scaleX(110%);
-    }
-}
-
-@keyframes rollout-hide {
-    0% {
-
-    }
-    99% {
-        transform: translateY(-10vh);
-    }
-    100% {
-        visibility: hidden;
-    }
-}
-
-@keyframes rollout-hide {
-    0% {
-
-    }
-    99% {
-        transform: translateY(-12%);
-    }
-    100% {
-        transform: translateY(-12%);
-        visibility: hidden;
-    }
-}
-
-@keyframes rollout-show {
-    0% {
-        transform: translateY(-12%);
-        z-index: -3;
-    }
-    100% {
-        z-index: -3;
-    }
-}
-
 
 *, html, body {
     font-family: "Host Grotesk", serif;
@@ -206,6 +44,7 @@ body {
     left: calc(50% - 6.5svh);
     z-index: 2;
 }
+
 #profile-picture-img {
     transform-origin: 42.5% 42.5%;
     transform: translateX(-7.5%) translateY(-7.5%);
@@ -291,6 +130,10 @@ body {
     transform: scale(1);
     position: relative;
     user-select: text;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    --spotlight-color: rgba(255, 255, 255, 0.05);
+    overflow: hidden;
 }
 .section .rocket-mask {
     border-radius: 4vh;
@@ -301,6 +144,26 @@ body {
          top: 0px; 
          pointer-events: none;
 }
+
+.card-spotlight::before {
+  border-radius: 4vh;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 80%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.card-spotlight:hover::before,
+.card-spotlight:focus-within::before {
+  opacity: 0.6;
+}
+
 .rollout {
     background: rgba(63, 22, 63, 0.3);
     filter: blur(10px); 
@@ -314,10 +177,10 @@ body {
     transition: all 0.4s ease-in-out;
     transform-origin: center;
     transform: scale(1);
-    position: relative;
+    position: absolute;
     width: 60%;
     height: 20svh;
-    bottom: 32svh;
+    bottom: -3svh;
     filter: blur(0.2svh);
     z-index: -1;
     user-select: none;
@@ -330,7 +193,7 @@ body {
     backdrop-filter: blur(2.2vh);
     cursor: pointer;
     filter: none;
-    box-shadow: 0 0 0 0.1em hsla(295, 41%, 42%, 0.35) inset;
+    box-shadow: 0 0 0 0.1em hsla(295, 41%, 42%, 0.3) inset;
 }
 .rolling-out {
     animation: rollout-rollingout 1s ease-in-out forwards;
@@ -390,8 +253,7 @@ body {
     height: 20vh;
 }
 .section:hover {
-    background: linear-gradient(to bottom right, rgb(16, 16, 16), rgb(48, 18, 48));
-    box-shadow: #2702274f 0px 0px 4svh 0px;
+    box-shadow: #2702274f 0px 0px 5svh 0px;
 }
 .card {
     width: 10%;
@@ -561,12 +423,12 @@ a.icon:hover {
     z-index: 1;
     right: 20%;
     top: -2vw;
-    animation: loading-blob-animation 1.5s ease-in-out forwards;
+    animation: loading-blob-animation 2s ease-in-out forwards;
     visibility: visible;
 }
 
 .loading-blob-animation-end {
-    animation: loading-blob-animation-end 0.5s ease-in-out forwards;
+    animation: loading-blob-animation-end 0.7s ease-in-out forwards;
 }
 
 .rocket {
@@ -589,20 +451,25 @@ a.icon:hover {
 
 .hide .rollout {
     visibility: visible;
-    animation: rollout-hide 1s ease-in-out forwards;
+    animation: rollout-hide 0.7s ease-in-out forwards;
 }
 .show .rollout {
-    animation: rollout-show 1s ease-in-out forwards;
+    animation: rollout-show 0.7s ease-in-out forwards;
 }
 
 .stupid-shit {
-    user-select:  none;
+    transition: 0.7s;
+        user-select:  none;
     position: fixed;
      z-index: 2;
       height: 30%;
        width: 50%;
         left: 22.5%; 
         top: 30%;
+}
+.even-more-stupid-shit {
+    top: 22.5%;
+    height: 50%;
 }
 .blob { 
     position: absolute; right: 0%; top: 0%; aspect-ratio: 1/1; width: 100%;
